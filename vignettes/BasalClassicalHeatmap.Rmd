@@ -1,0 +1,155 @@
+---
+title: "TODO"
+author: Astrid Deschênes, Daniel King and David A. Tuveson
+output:
+  rmarkdown::html_document:
+    highlight: pygments
+    toc: true
+    fig_width: 5
+    number_sections: true
+pkgdown:
+  asis: true
+bibliography: BasalClassicalHeatmap.bibtex
+vignette: >
+  %\VignetteIndexEntry{TODO}
+  %\VignettePackage{BasalClassicalHeatmap}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r style, echo = FALSE, results = 'asis', warning=FALSE, message=FALSE}
+BiocStyle::markdown()
+
+suppressPackageStartupMessages({
+  library(knitr)
+  library(BasalClassicalHeatmap)
+})
+
+set.seed(121)
+```
+
+
+<br />
+
+**Package**: `r Rpackage("BasalClassicalHeatmap")`<br />
+**Authors**: `r packageDescription("BasalClassicalHeatmap")[["Author"]]`<br />
+**Version**: `r packageDescription("BasalClassicalHeatmap")$Version`<br />
+**Compiled date**: `r Sys.Date()`<br />
+**License**: `r packageDescription("BasalClassicalHeatmap")[["License"]]`<br />
+
+
+# Licensing 
+
+
+The `r Githubpkg("adeschen/BasalClassicalHeatmap")` package and the underlying 
+`r Githubpkg("adeschen/BasalClassicalHeatmap")` code are distributed under the 
+Artistic license 2.0. You are free to use and redistribute this software. 
+
+<br>
+<br>
+
+
+# Citing
+
+If you use this package for a publication, we would ask you 
+to cite one of the following.
+
+TODO
+
+<br>
+<br>
+
+# Introduction
+
+
+TODO
+
+<br>
+<br>
+
+# Basal-like/Classical classification lists
+
+
+The available lists are from:
+
+- Moffitt et al 2015
+- Tiriac et al 2018
+- Miyabayashi et al 2020
+
+
+The Moffitt et al 2015 corresponds to the original Basal-like/Classical 
+classification gene list [@Moffitt2015]. The list contains 50 genes: 
+25 Basal-like and 25 Classical genes.
+
+The Tiriac et al 2018 list has been developed to classify PDAC 
+organoids [@Tiriac2018]. This list contains 88 genes: 22 Basal-like and 
+62 Classical genes.
+
+The Miyabayashi et al 2020 is an update of the original Moffitt 
+Basal-like/Classical classification gene list [@Miyabayashi2020]. Gene symbols 
+that were not found anymore in most recent versions of Ensembl have been
+replaced with their newest symbols. As the Moffitt gene list, this list 
+contains 25 Basal-like and 25 Classical genes.
+
+The three gene lists are available in the package:
+
+```{r classificationDataset, eval=TRUE}
+## Moffitt et al 2015
+data("Moffitt_2015")
+
+## Tiriac et al 2018
+data("Tiriac_2018")
+
+## Miyabayashi et al 2020
+data("Miyabayashi_2020")
+
+## Each dataset contains 2 columns
+## The first column has the gene symbols
+## The second column the class assignation (Basal-like or Classical)
+head(Moffitt_2015)
+
+```
+
+# Reproducible research
+
+To ensure reproducible results, *set.seed()* function should be call 
+before *createHeatmap()*. 
+
+
+```{r demoSeed, eval=FALSE}
+## First, fix the seed value
+set.seed(121234)
+
+
+## TODO
+
+```
+
+<br>
+<br>
+
+
+# Acknowledgments
+
+This work was supported by the Lustgarten Foundation, where David A. Tuveson 
+is a distinguished scholar and Director of the Lustgarten Foundation–designated 
+Laboratory of Pancreatic Cancer Research. 
+
+<br>
+<br>
+
+
+# Session info
+
+Here is the output of `sessionInfo()` on the system on which this document was 
+compiled:
+
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```
+
+<br>
+<br>
+
+# References
+

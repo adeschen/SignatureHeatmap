@@ -1,0 +1,34 @@
+Package: BasalClassicalHeatmap
+Type: Package
+Title: Heatmap using basal-like and classical gene list and RNA-seq expression 
+    data 
+Description: This package enables Basal-like/Classical classification of 
+    pancreatic tumor samples by generating a heatmap. There is three different 
+    list of genes available in the package: the original list from Moffitt et 
+    al. 2015; the updated list from Miyabayashi et al. 2020 and the list from 
+    Tiriac et al. 2018 that has been developed for pancreatic ductal 
+    adenocarcinoma (PDAC) organoids.
+Version: 0.0.1
+Authors@R: c(
+    person("Astrid", "Deschênes", email="adeschen@hotmail.com",
+    role=c("aut", "cre"), comment = c(ORCID = "0000-0001-7846-6749")),
+    person("Daniel", "King", email="dking14@northwell.edu",
+    role=c("dtc")),
+    person(given="David A.", family="Tuveson", email="dtuveson@cshl.edu", 
+    role=c("fnd"), comment = c(ORCID = "0000-0002-8017-2712")))
+License: Artistic-2.0
+Encoding: UTF-8
+NeedsCompilation: no
+VignetteBuilder: knitr
+Depends: R (>= 4.0)
+Imports: ComplexHeatmap,
+    som,
+    grid
+Suggests: testthat,
+    knitr,
+    rmarkdown,
+    BiocStyle,
+BugReports: https://github.com/adeschen/BasalClasicalHeatmap/issues
+URL: https://adeschen.github.io/BasalClasicalHeatmap/
+biocViews: Software, Sequencing
+RoxygenNote: 7.1.2
