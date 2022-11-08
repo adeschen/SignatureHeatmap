@@ -40,7 +40,7 @@ example:
 If you use one of the available Basal-like/Classical gene list, the appropriate
 paper should be referenced.
 
-For Moffitt et al 2015
+For Moffitt et al. 2015
 
 > Moffitt RA, Marayati R, Flate EL et al. Virtual microdissection identifies distinct tumor- and stroma-specific subtypes of pancreatic ductal adenocarcinoma. Nat Genet. 2015 Oct;47(10):1168-78. doi: 10.1038/ng.3398. Epub 2015 Sep 7. PMID: 26343385; PMCID: PMC4912058.
 
