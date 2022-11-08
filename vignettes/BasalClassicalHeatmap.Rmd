@@ -52,10 +52,31 @@ Artistic license 2.0. You are free to use and redistribute this software.
 
 # Citing
 
-If you use this package for a publication, we would ask you 
-to cite one of the following.
 
-TODO
+If you use the `r Githubpkg("adeschen/BasalClassicalHeatmap")` package for 
+a publication, we would ask you to cite the following:
+
+> Deschênes A, King D and Tuveson DA. BasalClassicalHeatmap: Heatmap using basal-like and classical gene list and RNA-seq expression data. R package version 0.0.2, https://adeschen.github.io/BasalClassicalHeatmap/ 
+  
+You can also replace it by the Research Resource Identifier __(RRID)__, as 
+example:
+
+>   BasalClassicalHeatmap version 0.0.2, RRID: SCR_022949
+
+If you use one of the available Basal-like/Classical gene list, the appropriate
+paper should be referenced.
+
+For Moffitt et al 2015
+
+> Moffitt RA, Marayati R, Flate EL et al. Virtual microdissection identifies distinct tumor- and stroma-specific subtypes of pancreatic ductal adenocarcinoma. Nat Genet. 2015 Oct;47(10):1168-78. doi: 10.1038/ng.3398. Epub 2015 Sep 7. PMID: 26343385; PMCID: PMC4912058.
+
+For Tiriac et al. 2018
+
+> Tiriac H, Belleau P, Engle DD et al. Organoid Profiling Identifies Common Responders to Chemotherapy in Pancreatic Cancer. Cancer Discov. 2018 Sep;8(9):1112-1129. doi: 10.1158/2159-8290.CD-18-0349. Epub 2018 May 31. PMID: 29853643; PMCID: PMC6125219.
+
+For Miyabayashi et al. 2020
+
+> Miyabayashi K, Baker LA, Deschênes A et al. Intraductal Transplantation Models of Human Pancreatic Ductal Adenocarcinoma Reveal Progressive Transition of Molecular Subtypes. Cancer Discov. 2020 Oct;10(10):1566-1589. doi: 10.1158/2159-8290.CD-20-0133. Epub 2020 Jul 23. PMID: 32703770; PMCID: PMC7664990.
 
 <br>
 <br>
@@ -184,7 +205,7 @@ The  _createHeatmap()_ function is needed to generate the classification
 heatmap. 
 
 
-```{r demo01, eval=TRUE}
+```{r demo01, eval=TRUE, fig.height=6, fig.align="center"}
 ## First, fix the seed value
 set.seed(142)
 
@@ -205,7 +226,7 @@ createHeatmap(gene_list=Moffitt_2015, rna_data=demo_PDAC_TCGA)
 The _createHeatmap()_ function used the _ComplexHeatmap::Heatmap_ function. 
 
 
-```{r demo02, eval=TRUE}
+```{r demo02, eval=TRUE, fig.height=6, fig.align="center"}
 ## First, fix the seed value
 set.seed(122)
 
@@ -229,7 +250,7 @@ createHeatmap(gene_list=Moffitt_2015, rna_data=demo_PDAC_TCGA,
 
 
 
-```{r demo03, eval=TRUE}
+```{r demo03, eval=TRUE, fig.height=6, fig.align="center"}
 ## Required library
 library(ComplexHeatmap)
 
