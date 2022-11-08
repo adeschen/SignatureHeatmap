@@ -78,3 +78,17 @@ test_that("createHeatmap() must return error when cluster_rows is a number", {
         gene_column="GENE", cluster_rows=22), error_message, fixed=TRUE)
 })
 
+
+test_that("createHeatmap() must return error when cluster_columns is a number", {
+    
+    demo <- data.frame("Sample1"=sample(1:100, size=10, replace=T),
+                        "Sample2"=sample(1:100, size=10, replace=T),
+                        "GENE"=paste0("GENE_", 1:10), stringsAsFactors=FALSE)
+    
+    error_message <- paste0("The \'cluster_columns\' parameter must be a ", 
+                                "logical (TRUE OR FALSE).")
+    
+    expect_error(createHeatmap(rna_data=demo, gene_list=demo$GENE, 
+        gene_column="GENE", cluster_columns=21), error_message, fixed=TRUE)
+})
+
