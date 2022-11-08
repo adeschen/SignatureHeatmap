@@ -143,3 +143,43 @@ NULL
 #' head(Miyabayashi_2020)
 #'
 NULL
+
+
+
+#' The Basal-like and Classical gene list used in Miyabayashi et al 2020.
+#'
+#' @name demo_PDAC_TCGA
+#'
+#' @docType data
+#'
+#' @aliases demo_PDAC_TCGA
+#'
+#' @format a \code{data.frame} with the following columns:
+#' \itemize{
+#' \item \code{SYMBOL} { a \code{character} string representing the
+#' symbol of the gene. }
+#' \item \code{Class} { a \code{character} string representing the class 
+#' (Basal-like or Classical) associated to the gene. }
+#' }
+#'
+#' @seealso
+#' \itemize{
+#' \item \code{\link{createHeatmap}} { for creating a heating using a 
+#' gene list and RNA-seq expression data.}
+#' }
+#'
+#' @usage data(demo_PDAC_TCGA)
+#'
+#' @keywords datasets
+#'
+#' @examples
+#'
+#' ## Load Miyabayashi et al 2020 gene list used for 
+#' ## Basal-like/Classical classification
+#' data(Miyabayashi_2020)
+#'
+#' data(demo_PDAC_TCGA)
+#'
+#' createHeatmap(gene_list=Miyabayashi_2020, rna_data=demo_PDAC_TCGA, 
+#'      gene_column="GENE")
+NULL

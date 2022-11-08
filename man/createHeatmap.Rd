@@ -17,7 +17,8 @@ createHeatmap(
   show_column_dend = TRUE,
   show_row_dend = TRUE,
   cluster_columns = TRUE,
-  cluster_rows = TRUE
+  cluster_rows = TRUE,
+  ...
 )
 }
 \arguments{
@@ -64,17 +65,26 @@ should be clustered. Default: \code{TRUE}.}
 
 \item{cluster_rows}{a code{logical} indicating if the rows
 should be clustered. Default: \code{TRUE}.}
+
+\item{\ldots}{further arguments passed to ComplexHeatmap::Heatmap() function.}
 }
 \value{
 TODO
 }
 \description{
-TODO
+The function selects the expression values related to the 
+gene list passed in argument. Then, the function adds one to the expression 
+values before log transforming the values. Then, the function normalizes 
+the data so that each row has mean 0 and variance 1. Finally, the function 
+generates a heatmap using input parameters.
 }
 \examples{
 
 ## TODO
 
+}
+\seealso{
+The default method omplexHeatmap::Heatmap().
 }
 \author{
 Astrid Deschênes

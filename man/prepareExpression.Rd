@@ -3,7 +3,8 @@
 \encoding{UTF-8}
 \name{prepareExpression}
 \alias{prepareExpression}
-\title{Normalized expression data using only basal-like/classical genes}
+\title{Prepare the expression data by selecting basal-like/classical genes
+and running normalization}
 \usage{
 prepareExpression(rna_data, gene_list, gene_column = "GENE")
 }
@@ -33,7 +34,10 @@ the \code{DATA} \code{data.frame}.}
 }
 }
 \description{
-TODO
+The function selects the expression values related to the 
+gene list passed in argument. Then, the function adds one to the expression 
+values before log transforming the values. Then, the function normalizes 
+the data so that each row has mean 0 and variance 1.
 }
 \examples{
 

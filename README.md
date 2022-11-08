@@ -1,6 +1,13 @@
 # BasalClassicalHeatmap
-Create a heatmap using basal-like and classical gene list and RNA-seq data
 
+The __BasalClassicalHeatmap__ package enables Basal-like/Classical 
+classification of pancreatic tumor 
+samples by generating a heatmap. There is three different lists of genes 
+available in the __BasalClassicalHeatmap__ package: the original list 
+from Moffitt et al. 2015; the 
+updated list from Miyabayashi et al. 2020 and the list from 
+Tiriac et al. 2018 that has been developed for pancreatic ductal 
+adenocarcinoma (PDAC) organoids.
 
 ## Authors ##
 

@@ -1,8 +1,10 @@
 #' @title TODO
 #'
-#' @description TODO
-#'
-#'
+#' @description The function selects the expression values related to the 
+#' gene list passed in argument. Then, the function adds one to the expression 
+#' values before log transforming the values. Then, the function normalizes 
+#' the data so that each row has mean 0 and variance 1. Finally, the function 
+#' generates a heatmap using input parameters.
 #'
 #' @param gene_list a \code{data.frame} containing the gene list used for the
 #' basal-like/classical classification. The \code{data.frame} must contain 
@@ -47,13 +49,20 @@
 #' 
 #' @param cluster_rows a code{logical} indicating if the rows   
 #' should be clustered. Default: \code{TRUE}.
+#' 
+#' @param \ldots further arguments passed to ComplexHeatmap::Heatmap() function.
 #'
 #' @return TODO
 #'
 #' @examples
 #'
 #' ## TODO
-#'
+#' 
+#' @seealso
+#' 
+#' The default method omplexHeatmap::Heatmap().
+#' 
+#' 
 #' @author Astrid Deschênes
 #' @importFrom ComplexHeatmap Heatmap HeatmapAnnotation 
 #' @importFrom grid gpar
@@ -66,15 +75,13 @@ createHeatmap <- function(gene_list, rna_data, gene_column="GENE",
     clustering_distance_columns=c("euclidean", "maximum", "manhattan", 
     "canberra", "binary", "minkowski", "pearson", "spearman", "kendall"),
     show_column_dend=TRUE, show_row_dend=TRUE, 
-    cluster_columns=TRUE, cluster_rows=TRUE) {
+    cluster_columns=TRUE, cluster_rows=TRUE, ...) {
     
-    if (!is.character(gene_column)) {
-        stop("The \'gene_column\' parameter must be a character string.")
-    }
-    if (gene_column %in% colnames(rna_data)) {
-        stop("The \'gene_column\' parameter must correspond to the name of ",
-             "a column in the \'rna_data\' parameter.")
-    }
+    ## Validate parameters
+    validateCreateHeatmap(gene_list=gene_list, rna_data=rna_data, 
+        gene_column=gene_column, name=name, show_column_dend=show_column_dend, 
+        show_row_dend=show_row_dend, cluster_columns=cluster_columns, 
+        cluster_rows=cluster_rows)
     
     ## Select clustering rows method to be used
     clustering_distance_rows <- match.arg(clustering_distance_rows)
@@ -82,36 +89,27 @@ createHeatmap <- function(gene_list, rna_data, gene_column="GENE",
     ## Select clustering column method to be used
     clustering_distance_columns <- match.arg(clustering_distance_columns)
     
-    
-    
     cleanData <- prepareExpression(rna_data, gene_list, gene_column="GENE")
     
-    row_ha = HeatmapAnnotation(Subtype = cleanData[["ROW_INFO"]]$Class,
-                               col = list(Subtype = c("Classical"="darkviolet", 
-                                                      "Basal-like"="darkorange", 
-                                                      "Not assigned"="white")),
-                               annotation_name_gp = gpar(fontsize = 12),
-                               annotation_legend_param =list(Subtype = list(border="black", direction="vertical",
-                                                                            title_gp = gpar(fontsize = 9, fontface = "bold"))),
-                               annotation_name_side=list(Subtype="bottom"),
-                               which="row")
+    row_ha <- HeatmapAnnotation(Subtype=cleanData[["ROW_INFO"]]$Class,
+                    col=list(Subtype=c("Classical"="darkviolet", 
+                        "Basal-like"="darkorange")),
+                    annotation_name_gp=gpar(fontsize = 12),
+                    annotation_legend_param=list(Subtype=list(border="black", 
+                        direction="vertical", title_gp=gpar(fontsize=12, 
+                        fontface="bold"))),
+                    annotation_name_side=list(Subtype="bottom"), which="row")
     
-    
-    gg <- Heatmap(cleanData[["DATA"]], right_annotation = row_ha,
-                    name=name, 
-                    heatmap_legend_param = gpar(#direction = "vertical", 
-                    title_gp = gpar(col = "black", fontsize = 11, fontface = "bold")), 
-                    clustering_distance_rows=clustering_distance_rows, 
-                    clustering_distance_columns=clustering_distance_columns, 
-                  
-                    column_names_gp = gpar(fontsize = 9),
-                        row_names_gp = gpar(fontsize = 9),
-                    show_column_dend=show_column_dend,
-                    cluster_columns=cluster_columns)
+    gg <- Heatmap(matrix=cleanData[["DATA"]], right_annotation=row_ha,
+            name=name, heatmap_legend_param=gpar(title_gp=gpar(col="black", 
+                fontsize=11, fontface="bold")), 
+            clustering_distance_rows=clustering_distance_rows, 
+            clustering_distance_columns=clustering_distance_columns, 
+            show_column_dend=show_column_dend,
+            cluster_columns=cluster_columns, ...)
     
     #uu <- draw(gg, heatmap_legend_side = "right", 
     #                        annotation_legend_side = "bottom")
     
-    
-    
+    return(gg)
 }
