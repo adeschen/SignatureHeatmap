@@ -31,7 +31,15 @@
 #'
 #' @examples
 #'
-#' ## TODO
+#' ## Load Moffitt et al 2015 gene list
+#' data("Moffitt_2015")
+#'
+#' ## Load demo PDAC TCGA expression data
+#' data("demo_PDAC_TCGA")
+#'
+#' ## Prepare the data for the heatmap creation step
+#' result <- BasalClassicalHeatmap:::prepareExpressionc(rna_data=demo_PDAC_TCGA, 
+#'     gene_list=Moffitt_2015, gene_column="GENE")
 #'
 #' @author Astrid Deschênes
 #' @importFrom som normalize

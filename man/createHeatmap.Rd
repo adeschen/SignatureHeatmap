@@ -80,7 +80,15 @@ generates a heatmap using input parameters.
 }
 \examples{
 
-## TODO
+## Load Moffitt et al 2015 gene list
+data("Moffitt_2015")
+
+## Load demo PDAC TCGA expression data
+data("demo_PDAC_TCGA")
+
+## Create heatmap with default parameters
+## The column in the rna_data data.frame is the default name "GENE"
+createHeatmap(gene_list=Moffitt_2015, rna_data=demo_PDAC_TCGA)
 
 }
 \seealso{
