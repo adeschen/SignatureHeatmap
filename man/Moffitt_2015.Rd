@@ -31,6 +31,15 @@ data(Moffitt_2015)
 head(Moffitt_2015)
 
 }
+\references{
+Moffitt RA, Marayati R, Flate EL, Volmar KE, Loeza SG, Hoadley KA, 
+Rashid NU, Williams LA, Eaton SC, Chung AH, Smyla JK, Anderson JM, 
+Kim HJ, Bentrem DJ, Talamonti MS, Iacobuzio-Donahue CA, Hollingsworth MA, 
+Yeh JJ. Virtual microdissection identifies distinct tumor- and 
+stroma-specific subtypes of pancreatic ductal adenocarcinoma. 
+Nat Genet. 2015 Oct;47(10):1168-78. 
+doi: 10.1038/ng.3398. Epub 2015 Sep 7. PMID: 26343385; PMCID: PMC4912058.
+}
 \seealso{
 \itemize{
 \item \code{\link{createHeatmap}} { for creating a heating using a 

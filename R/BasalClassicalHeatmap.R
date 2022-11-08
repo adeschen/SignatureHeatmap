@@ -50,6 +50,24 @@ NULL
 #'
 #' @keywords datasets
 #'
+#' @references 
+#' 
+#' Tiriac H, Belleau P, Engle DD, Plenker D, Deschênes A, Somerville TDD, 
+#' Froeling FEM, Burkhart RA, Denroche RE, Jang GH, Miyabayashi K, Young CM, 
+#' Patel H, Ma M, LaComb JF, Palmaira RLD, Javed AA, Huynh JC, Johnson M, 
+#' Arora K, Robine N, Shah M, Sanghvi R, Goetz AB, Lowder CY, Martello L, 
+#' Driehuis E, LeComte N, Askan G, Iacobuzio-Donahue CA, Clevers H, Wood LD, 
+#' Hruban RH, Thompson E, Aguirre AJ, Wolpin BM, Sasson A, Kim J, Wu M, 
+#' Bucobo JC, Allen P, Sejpal DV, Nealon W, Sullivan JD, Winter JM, 
+#' Gimotty PA, Grem JL, DiMaio DJ, Buscaglia JM, Grandgenett PM, Brody JR, 
+#' Hollingsworth MA, O'Kane GM, Notta F, Kim E, Crawford JM, Devoe C, Ocean A, 
+#' Wolfgang CL, Yu KH, Li E, Vakoc CR, Hubert B, Fischer SE, Wilson JM, 
+#' Moffitt R, Knox J, Krasnitz A, Gallinger S, Tuveson DA. 
+#' Organoid Profiling Identifies Common Responders to Chemotherapy in 
+#' Pancreatic Cancer. Cancer Discov. 2018 Sep;8(9):1112-1129. 
+#' doi: 10.1158/2159-8290.CD-18-0349. 
+#' Epub 2018 May 31. PMID: 29853643; PMCID: PMC6125219.
+#' 
 #' @examples
 #'
 #' ## Load Tiriac et al 2018 gene list used for 
@@ -91,6 +109,16 @@ NULL
 #'
 #' @keywords datasets
 #'
+#' @references 
+#' 
+#' Moffitt RA, Marayati R, Flate EL, Volmar KE, Loeza SG, Hoadley KA, 
+#' Rashid NU, Williams LA, Eaton SC, Chung AH, Smyla JK, Anderson JM, 
+#' Kim HJ, Bentrem DJ, Talamonti MS, Iacobuzio-Donahue CA, Hollingsworth MA, 
+#' Yeh JJ. Virtual microdissection identifies distinct tumor- and 
+#' stroma-specific subtypes of pancreatic ductal adenocarcinoma. 
+#' Nat Genet. 2015 Oct;47(10):1168-78. 
+#' doi: 10.1038/ng.3398. Epub 2015 Sep 7. PMID: 26343385; PMCID: PMC4912058.
+#' 
 #' @examples
 #'
 #' ## Load Moffitt et al 2015 gene list used for 
@@ -131,6 +159,18 @@ NULL
 #'
 #' @keywords datasets
 #'
+#' @references 
+#' 
+#' Miyabayashi K, Baker LA, Deschênes A, Traub B, Caligiuri G, Plenker D, 
+#' Alagesan B, Belleau P, Li S, Kendall J, Jang GH, Kawaguchi RK, 
+#' Somerville TDD, Tiriac H, Hwang CI, Burkhart RA, Roberts NJ, Wood LD, 
+#' Hruban RH, Gillis J, Krasnitz A, Vakoc CR, Wigler M, Notta F, 
+#' Gallinger S, Park Y, Tuveson DA. Intraductal Transplantation Models of 
+#' Human Pancreatic Ductal Adenocarcinoma Reveal Progressive Transition of 
+#' Molecular Subtypes. Cancer Discov. 2020 Oct;10(10):1566-1589. 
+#' doi: 10.1158/2159-8290.CD-20-0133. 
+#' Epub 2020 Jul 23. PMID: 32703770; PMCID: PMC7664990.
+#' 
 #' @examples
 #'
 #' ## Load Miyabayashi et al 2020 gene list used for 
@@ -169,6 +209,10 @@ NULL
 #' @usage data(demo_PDAC_TCGA)
 #'
 #' @keywords datasets
+#' 
+#' @references
+#' 
+#' The TCGA Research Network: https://www.cancer.gov/tcga
 #'
 #' @examples
 #'

@@ -31,6 +31,9 @@ createHeatmap(gene_list=Miyabayashi_2020, rna_data=demo_PDAC_TCGA,
      gene_column="GENE")
      
 }
+\references{
+The TCGA Research Network: https://www.cancer.gov/tcga
+}
 \seealso{
 \itemize{
 \item \code{\link{createHeatmap}} { for creating a heating using a 

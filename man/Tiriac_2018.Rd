@@ -32,6 +32,23 @@ head(Tiriac_2018)
 
 
 }
+\references{
+Tiriac H, Belleau P, Engle DD, Plenker D, Deschênes A, Somerville TDD, 
+Froeling FEM, Burkhart RA, Denroche RE, Jang GH, Miyabayashi K, Young CM, 
+Patel H, Ma M, LaComb JF, Palmaira RLD, Javed AA, Huynh JC, Johnson M, 
+Arora K, Robine N, Shah M, Sanghvi R, Goetz AB, Lowder CY, Martello L, 
+Driehuis E, LeComte N, Askan G, Iacobuzio-Donahue CA, Clevers H, Wood LD, 
+Hruban RH, Thompson E, Aguirre AJ, Wolpin BM, Sasson A, Kim J, Wu M, 
+Bucobo JC, Allen P, Sejpal DV, Nealon W, Sullivan JD, Winter JM, 
+Gimotty PA, Grem JL, DiMaio DJ, Buscaglia JM, Grandgenett PM, Brody JR, 
+Hollingsworth MA, O'Kane GM, Notta F, Kim E, Crawford JM, Devoe C, Ocean A, 
+Wolfgang CL, Yu KH, Li E, Vakoc CR, Hubert B, Fischer SE, Wilson JM, 
+Moffitt R, Knox J, Krasnitz A, Gallinger S, Tuveson DA. 
+Organoid Profiling Identifies Common Responders to Chemotherapy in 
+Pancreatic Cancer. Cancer Discov. 2018 Sep;8(9):1112-1129. 
+doi: 10.1158/2159-8290.CD-18-0349. 
+Epub 2018 May 31. PMID: 29853643; PMCID: PMC6125219.
+}
 \seealso{
 \itemize{
 \item \code{\link{createHeatmap}} { for creating a heating using a 

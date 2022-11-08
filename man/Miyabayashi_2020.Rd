@@ -31,6 +31,17 @@ data(Miyabayashi_2020)
 head(Miyabayashi_2020)
 
 }
+\references{
+Miyabayashi K, Baker LA, Deschênes A, Traub B, Caligiuri G, Plenker D, 
+Alagesan B, Belleau P, Li S, Kendall J, Jang GH, Kawaguchi RK, 
+Somerville TDD, Tiriac H, Hwang CI, Burkhart RA, Roberts NJ, Wood LD, 
+Hruban RH, Gillis J, Krasnitz A, Vakoc CR, Wigler M, Notta F, 
+Gallinger S, Park Y, Tuveson DA. Intraductal Transplantation Models of 
+Human Pancreatic Ductal Adenocarcinoma Reveal Progressive Transition of 
+Molecular Subtypes. Cancer Discov. 2020 Oct;10(10):1566-1589. 
+doi: 10.1158/2159-8290.CD-20-0133. 
+Epub 2020 Jul 23. PMID: 32703770; PMCID: PMC7664990.
+}
 \seealso{
 \itemize{
 \item \code{\link{createHeatmap}} { for creating a heating using a 
