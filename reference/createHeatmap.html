@@ -21,7 +21,7 @@ generates a heatmap using input parameters."><!-- mathjax --><script src="https:
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">BasalClassicalHeatmap</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.2</span>
       </span>
     </div>
 
@@ -74,6 +74,8 @@ generates a heatmap using input parameters.</p>
 <span>  show_row_dend <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  cluster_columns <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  cluster_rows <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  heatmap_legend_param <span class="op">=</span> <span class="fu">gpar</span><span class="op">(</span>title_gp <span class="op">=</span> <span class="fu">gpar</span><span class="op">(</span>col <span class="op">=</span> <span class="st">"black"</span>, fontsize <span class="op">=</span> <span class="fl">11</span>, fontface <span class="op">=</span></span>
+<span>    <span class="st">"bold"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -144,6 +146,11 @@ should be clustered. Default: <code>TRUE</code>.</p></dd>
 should be clustered. Default: <code>TRUE</code>.</p></dd>
 
 
+<dt>heatmap_legend_param</dt>
+<dd><p>an object of class '<code>gpar</code>'. Default: 
+<code>gpar(title_gp=gpar(col="black", fontsize=11, fontface="bold"))</code>.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>further arguments passed to ComplexHeatmap::Heatmap() function.</p></dd>
 
@@ -166,9 +173,17 @@ should be clustered. Default: <code>TRUE</code>.</p></dd>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co">## TODO</span></span></span>
+<span class="r-in"><span><span class="co">## Load Moffitt et al 2015 gene list</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"Moffitt_2015"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"></span>
+<span class="r-in"><span><span class="co">## Load demo PDAC TCGA expression data</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"demo_PDAC_TCGA"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Create heatmap with default parameters</span></span></span>
+<span class="r-in"><span><span class="co">## The column in the rna_data data.frame is the default name "GENE"</span></span></span>
+<span class="r-in"><span><span class="fu">createHeatmap</span><span class="op">(</span>gene_list<span class="op">=</span><span class="va">Moffitt_2015</span>, rna_data<span class="op">=</span><span class="va">demo_PDAC_TCGA</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="createHeatmap-1.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>

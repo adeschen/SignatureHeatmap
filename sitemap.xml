@@ -19,6 +19,15 @@
     <loc>/reference/BasalClassicalHeatmap-package.html</loc>
   </url>
   <url>
+    <loc>/reference/Miyabayashi_2020.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Moffitt_2015.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Tiriac_2018.html</loc>
+  </url>
+  <url>
     <loc>/reference/createHeatmap.html</loc>
   </url>
   <url>
@@ -28,16 +37,7 @@
     <loc>/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/Miyabayashi_2020.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Moffitt_2015.html</loc>
-  </url>
-  <url>
     <loc>/reference/prepareExpression.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Tiriac_2018.html</loc>
   </url>
   <url>
     <loc>/reference/validateCreateHeatmap.html</loc>
