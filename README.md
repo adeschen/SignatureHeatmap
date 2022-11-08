@@ -8,7 +8,9 @@
 
 The __BasalClassicalHeatmap__ package enables Basal-like/Classical 
 classification of pancreatic tumor 
-samples by generating a heatmap. There is three different lists of genes 
+samples by generating heatmaps using transcriptomic data. 
+
+There is three different lists of Basal-like/Classical genes 
 available in the __BasalClassicalHeatmap__ package: the original list 
 from Moffitt et al. 2015; the 
 updated list from Miyabayashi et al. 2020 and the list from 
