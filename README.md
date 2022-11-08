@@ -30,8 +30,8 @@ David A. Tuveson
 If you use this package for a publication, we would ask you 
 to cite the following:
 
-> TODO
-
+> Deschênes A, King D and Tuveson DA. BasalClassicalHeatmap: Heatmap using basal-like and classical gene list and RNA-seq expression data. R package version 0.0.2, https://adeschen.github.io/BasalClassicalHeatmap/ 
+  
 You can also replace it by the Research Resource Identifier __(RRID)__, as 
 example:
 
