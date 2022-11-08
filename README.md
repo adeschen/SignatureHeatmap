@@ -27,6 +27,17 @@ David A. Tuveson
 
 [BasalClassicalHeatmap Get Started](https://adeschen.github.io/BasalClassicalHeatmap/articles/BasalClassicalHeatmap.html)
 
+## Installation ##
+
+To install the latest version accessible using the [devtools](https://cran.r-project.org/web/packages/devtools/index.html) 
+package:
+
+     ## Load required package
+     library(devtools)
+
+     ## Install the latest version of BasalClassicalHeatmap
+     devtools::install_github('adeschen/BasalClassicalHeatmap')
+
 
 
 ## Maintainer
