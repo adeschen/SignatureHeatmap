@@ -78,10 +78,40 @@ adenocarcinoma (PDAC) organoids.
 <br>
 <br>
 
-# Basal-like/Classical classification lists
+# Input data
+
+The function _createHeatmap()_ is needed to generate the classification 
+heatmap. This function required:
+
+1. A _data.frame_ containing transcriptomic expression
+2. A _data.frame_ containing the Basal-like/Classical genes
 
 
-The available lists are from:
+## Transcriptomic expression _data.frame_
+
+The transcriptomic expression must have one column per sample and one column 
+with the name of the genes represented in the rows. 
+
+A demo dataset called _demo_PDAC_TCGA_ is available in the 
+`r Githubpkg("adeschen/BasalClassicalHeatmap")` package. The column for the 
+gene names is called '_GENE_'.
+
+```{r demoRNA, eval=TRUE}
+
+data("demo_PDAC_TCGA")
+
+head(demo_PDAC_TCGA[, (ncol(demo_PDAC_TCGA)-4):ncol(demo_PDAC_TCGA)], nrow=3)
+
+```
+
+<br>
+<br>
+
+## Basal-like/Classical classification _data.frame_
+
+
+There are 3 available lists in the 
+`r Githubpkg("adeschen/BasalClassicalHeatmap")` package:
 
 - Moffitt et al 2015
 - Tiriac et al 2018
@@ -102,7 +132,10 @@ that were not found anymore in most recent versions of Ensembl have been
 replaced with their newest symbols. As the Moffitt gene list, this list 
 contains 25 Basal-like and 25 Classical genes.
 
-The three gene lists are available in the package:
+You can use you own gene list as long as the genes are in a _data.frame_ 
+containing those 2 columns: '_SYMBOL_' and '_Class_'. The '_Class_' column 
+contains the classification formatted as 'Basal-like' and 'Classical' (with 
+respect to upper letters).
 
 ```{r classificationDataset, eval=TRUE}
 ## Moffitt et al 2015
@@ -121,6 +154,56 @@ head(Moffitt_2015)
 
 ```
 
+<br>
+<br>
+
+# Create heatmap
+
+
+The  _createHeatmap()_ function is needed to generate the classification 
+heatmap. 
+
+
+```{r demo01, eval=TRUE}
+## First, fix the seed value
+set.seed(142)
+
+## Load Moffitt et al 2015 gene list
+data("Moffitt_2015")
+
+## Load demo PDAC TCGA expression data
+data("demo_PDAC_TCGA")
+
+## Create heatmap with default parameters
+## The column in the rna_data data.frame is the default name "GENE"
+createHeatmap(gene_list=Moffitt_2015, rna_data=demo_PDAC_TCGA)
+```
+
+<br>
+<br>
+
+The _createHeatmap()_ function used the _ComplexHeatmap::Heatmap_ function. 
+
+
+```{r demo02, eval=TRUE}
+## First, fix the seed value
+set.seed(122)
+
+## Load Moffitt et al 2015 gene list
+data("Moffitt_2015")
+
+## Load demo PDAC TCGA expression data
+data("demo_PDAC_TCGA")
+
+## Create heatmap with default parameters
+## The column in the rna_data data.frame is the default name "GENE"
+createHeatmap(gene_list=Moffitt_2015, rna_data=demo_PDAC_TCGA,  
+    clustering_distance_rows = "spearman", 
+    clustering_distance_columns="spearman", 
+    row_split=2, column_split=2, show_row_names=FALSE, show_column_names=FALSE)
+```
+
+
 # Reproducible research
 
 To ensure reproducible results, *set.seed()* function should be call 
@@ -138,8 +221,8 @@ data("Miyabayashi_2020")
 data("demo_PDAC_TCGA")
 
 ## Create heatmap
-createHeatmap(gene_list = Miyabayashi_2020, rna_data = demo_PDAC_TCGA, 
-    row_split=2, column_split=2)
+createHeatmap(gene_list=Miyabayashi_2020, rna_data=demo_PDAC_TCGA, 
+    row_split=2, column_split=2, show_row_names=FALSE, show_column_names=FALSE)
 
 ```
 
