@@ -1,0 +1,11 @@
+CHANGES IN VERSION 0.0.2
+------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+   o The vignette has been upgraded
+
+MODIFICATIONS
+
+   o The createHeatmap() function has a new 'heatmap_legend_param' parameter
+   o New unit tests
