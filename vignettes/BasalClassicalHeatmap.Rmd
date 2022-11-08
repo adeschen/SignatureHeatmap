@@ -200,8 +200,44 @@ data("demo_PDAC_TCGA")
 createHeatmap(gene_list=Moffitt_2015, rna_data=demo_PDAC_TCGA,  
     clustering_distance_rows = "spearman", 
     clustering_distance_columns="spearman", 
-    row_split=2, column_split=2, show_row_names=FALSE, show_column_names=FALSE)
+    row_split=2, column_split=2, column_names_gp = gpar(fontsize = 8),
+    show_row_names=FALSE)
 ```
+
+<br>
+<br>
+
+
+
+```{r demo03, eval=TRUE}
+## Required library
+library(ComplexHeatmap)
+
+## First, fix the seed value
+set.seed(188)
+
+## Load Moffitt et al 2015 gene list
+data("Moffitt_2015")
+
+## Load demo PDAC TCGA expression data
+data("demo_PDAC_TCGA")
+
+## Create heatmap with default parameters
+## The column in the rna_data data.frame is the default name "GENE"
+gg <- createHeatmap(gene_list=Moffitt_2015, rna_data=demo_PDAC_TCGA,  
+        clustering_distance_rows = "spearman", 
+        clustering_distance_columns="spearman", 
+        row_split=2, column_split=2, show_row_names=FALSE, 
+        show_column_names=FALSE)
+
+uu <- draw(gg, show_heatmap_legend=FALSE, 
+        column_title = "Samples", row_title="Basal-like/Classical Genes", 
+        column_title_gp=gpar(fontsize="12", fontface="bold"), 
+        row_title_gp=gpar(fontsize="12", fontface="bold"))
+```
+
+<br>
+<br>
 
 
 # Reproducible research
