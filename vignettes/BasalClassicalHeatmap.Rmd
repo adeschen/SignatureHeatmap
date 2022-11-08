@@ -78,6 +78,25 @@ adenocarcinoma (PDAC) organoids.
 <br>
 <br>
 
+# Installation
+
+The [devtools](https://cran.r-project.org/web/packages/devtools/index.html) 
+package is required to install this package.
+
+You need to start R (version "4.2" or higher) and enter: 
+
+```{r installDemo01, eval=FALSE}
+if (!requireNamespace("devtools", quietly = TRUE))
+  install.packages("devtools")
+
+## Install the latest version of BasalClassicalHeatmap
+ devtools::install_github('adeschen/BasalClassicalHeatmap')
+```
+
+
+<br>
+<br>
+
 # Input data
 
 The function _createHeatmap()_ is needed to generate the classification 
