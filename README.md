@@ -1,4 +1,5 @@
 <!-- badges: start -->
+[![R-CMD-check-bioc](https://github.com/adeschen/BasalClassicalHeatmap/actions/workflows/check-bioc.yaml/badge.svg)](https://github.com/adeschen/BasalClassicalHeatmap/actions/workflows/check-bioc.yaml)
 [![codecov](https://codecov.io/gh/adeschen/BasalClassicalHeatmap/branch/main/graph/badge.svg?token=XVKU8S1E2R)](https://codecov.io/gh/adeschen/BasalClassicalHeatmap)
 [![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)
 <!-- badges: end -->
