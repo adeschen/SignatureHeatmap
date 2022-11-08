@@ -3,21 +3,19 @@
 \docType{data}
 \name{demo_PDAC_TCGA}
 \alias{demo_PDAC_TCGA}
-\title{The Basal-like and Classical gene list used in Miyabayashi et al 2020.}
+\title{TODO}
 \format{
-a \code{data.frame} with the following columns:
-\itemize{
-\item \code{SYMBOL} { a \code{character} string representing the
-symbol of the gene. }
-\item \code{Class} { a \code{character} string representing the class 
-(Basal-like or Classical) associated to the gene. }
-}
+a \code{data.frame} containing normalized expected counts for genes 
+associated to Basal-like/Classical classification. The rows are containing 
+normalized expected counts. The \code{data.frame} 
+contains one column per sample in addition to a column called 'GENE' that 
+contains the name of the genes represented in each row.
 }
 \usage{
 data(demo_PDAC_TCGA)
 }
 \description{
-The Basal-like and Classical gene list used in Miyabayashi et al 2020.
+TODO
 }
 \examples{
 
@@ -25,10 +23,13 @@ The Basal-like and Classical gene list used in Miyabayashi et al 2020.
 ## Basal-like/Classical classification
 data(Miyabayashi_2020)
 
+## Load the expression dataset
 data(demo_PDAC_TCGA)
 
+## Create a heatmap using the Miyabayashi et al 2020 gene list
 createHeatmap(gene_list=Miyabayashi_2020, rna_data=demo_PDAC_TCGA, 
      gene_column="GENE")
+     
 }
 \seealso{
 \itemize{
