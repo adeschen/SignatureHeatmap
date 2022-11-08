@@ -106,9 +106,10 @@ heatmap. This function required:
 2. A _data.frame_ containing the Basal-like/Classical genes
 
 
-## Transcriptomic expression _data.frame_
+## Transcriptomic expression input
 
-The transcriptomic expression must have one column per sample and one column 
+The transcriptomic expression must be in a _data.frame_ format and 
+have one column per sample and one column 
 with the name of the genes represented in the rows. 
 
 A demo dataset called _demo_PDAC_TCGA_ is available in the 
@@ -126,10 +127,10 @@ head(demo_PDAC_TCGA[, (ncol(demo_PDAC_TCGA)-4):ncol(demo_PDAC_TCGA)], nrow=3)
 <br>
 <br>
 
-## Basal-like/Classical classification _data.frame_
+## Basal-like/Classical classification input
 
 
-There are 3 available lists in the 
+There are 3 available Basal-like/Classical gene lists in the 
 `r Githubpkg("adeschen/BasalClassicalHeatmap")` package:
 
 - Moffitt et al 2015
