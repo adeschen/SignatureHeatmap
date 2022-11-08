@@ -1,20 +1,20 @@
 ---
-title: "TODO"
-author: Astrid Deschênes, Daniel King and David A. Tuveson
+title: "Basal-like/Classical transcriptomic heatmap"
+author: Astrid Deschênes
 output:
-  rmarkdown::html_document:
-    highlight: pygments
-    toc: true
-    fig_width: 5
-    number_sections: true
+    rmarkdown::html_document:
+        highlight: pygments
+        toc: true
+        fig_width: 5
+        number_sections: true
 pkgdown:
   asis: true
 bibliography: BasalClassicalHeatmap.bibtex
 vignette: >
-  %\VignetteIndexEntry{TODO}
-  %\VignettePackage{BasalClassicalHeatmap}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+    %\VignetteIndexEntry{TODO}
+    %\VignettePackage{BasalClassicalHeatmap}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
 ---
 
 ```{r style, echo = FALSE, results = 'asis', warning=FALSE, message=FALSE}
@@ -130,7 +130,7 @@ head(demo_PDAC_TCGA[, (ncol(demo_PDAC_TCGA)-4):ncol(demo_PDAC_TCGA)], nrow=3)
 ## Basal-like/Classical classification input
 
 
-There are 3 available Basal-like/Classical gene lists in the 
+There are 3 Basal-like/Classical gene lists available in the 
 `r Githubpkg("adeschen/BasalClassicalHeatmap")` package:
 
 - Moffitt et al 2015
@@ -262,12 +262,12 @@ uu <- draw(gg, show_heatmap_legend=FALSE,
 
 # Reproducible research
 
-To ensure reproducible results, *set.seed()* function should be call 
-before *createHeatmap()*. 
+To ensure reproducible results, the *set.seed()* function should be call 
+before calling the *createHeatmap()* function. 
 
 
-```{r demoSeed, eval=TRUE}
-## First, fix the seed value
+```{r demoSeed, eval=TRUE, fig.height=6, fig.align="center"}
+## First, fix the seed value to ensure reproducible results
 set.seed(144)
 
 ## Load Miyabayashi et al 2020 gene list
