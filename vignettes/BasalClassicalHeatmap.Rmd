@@ -22,6 +22,7 @@ BiocStyle::markdown()
 
 suppressPackageStartupMessages({
   library(knitr)
+  library(ComplexHeatmap)
   library(BasalClassicalHeatmap)
 })
 
@@ -61,8 +62,18 @@ TODO
 
 # Introduction
 
+Pancreatic ductal adenocarcinoma (PDAC) is an aggressive form of cancer. 
+Bulk transcriptomic analyses distinguished between two main classes 
+of tumors: _classical_ and _basal-like_ . The 
+_basal-like_ tumors show a more aggressive clinical behavior [@Moffitt2015].
 
-TODO
+This package enables Basal-like/Classical classification of 
+pancreatic tumor samples by generating a heatmap based on transcriptomic data. 
+There is three different lists of genes available in the package: the original 
+list from Moffitt et al. 2015 [@Moffitt2015]; the updated list 
+from Miyabayashi et al. 2020 [@Miyabayashi2020] and the list from 
+Tiriac et al. 2018 [@Tiriac2018] that has been developed for pancreatic ductal 
+adenocarcinoma (PDAC) organoids.
 
 <br>
 <br>
@@ -116,12 +127,19 @@ To ensure reproducible results, *set.seed()* function should be call
 before *createHeatmap()*. 
 
 
-```{r demoSeed, eval=FALSE}
+```{r demoSeed, eval=TRUE}
 ## First, fix the seed value
-set.seed(121234)
+set.seed(144)
 
+## Load Miyabayashi et al 2020 gene list
+data("Miyabayashi_2020")
 
-## TODO
+## Load demo PDAC TCGA expression data
+data("demo_PDAC_TCGA")
+
+## Create heatmap
+createHeatmap(gene_list = Miyabayashi_2020, rna_data = demo_PDAC_TCGA, 
+    row_split=2, column_split=2)
 
 ```
 
