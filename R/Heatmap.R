@@ -50,6 +50,9 @@
 #' @param cluster_rows a code{logical} indicating if the rows   
 #' should be clustered. Default: \code{TRUE}.
 #' 
+#' @param heatmap_legend_param an object of class '\code{gpar}'. Default: 
+#' \code{gpar(title_gp=gpar(col="black", fontsize=11, fontface="bold"))}.
+#' 
 #' @param \ldots further arguments passed to ComplexHeatmap::Heatmap() function.
 #'
 #' @return TODO
@@ -83,7 +86,9 @@ createHeatmap <- function(gene_list, rna_data, gene_column="GENE",
     clustering_distance_columns=c("euclidean", "maximum", "manhattan", 
     "canberra", "binary", "minkowski", "pearson", "spearman", "kendall"),
     show_column_dend=TRUE, show_row_dend=TRUE, 
-    cluster_columns=TRUE, cluster_rows=TRUE, ...) {
+    cluster_columns=TRUE, cluster_rows=TRUE, 
+    heatmap_legend_param=gpar(title_gp=gpar(col="black", fontsize=11, 
+    fontface="bold")), ...) {
     
     ## Validate parameters
     validateCreateHeatmap(gene_list=gene_list, rna_data=rna_data, 
@@ -109,15 +114,11 @@ createHeatmap <- function(gene_list, rna_data, gene_column="GENE",
                     annotation_name_side=list(Subtype="bottom"), which="row")
     
     gg <- Heatmap(matrix=cleanData[["DATA"]], right_annotation=row_ha,
-            name=name, heatmap_legend_param=gpar(title_gp=gpar(col="black", 
-                fontsize=11, fontface="bold")), 
+            name=name, heatmap_legend_param=heatmap_legend_param, 
             clustering_distance_rows=clustering_distance_rows, 
             clustering_distance_columns=clustering_distance_columns, 
             show_column_dend=show_column_dend,
             cluster_columns=cluster_columns, ...)
-    
-    #uu <- draw(gg, heatmap_legend_side = "right", 
-    #                        annotation_legend_side = "bottom")
     
     return(gg)
 }

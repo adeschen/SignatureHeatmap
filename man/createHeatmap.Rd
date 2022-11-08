@@ -18,6 +18,8 @@ createHeatmap(
   show_row_dend = TRUE,
   cluster_columns = TRUE,
   cluster_rows = TRUE,
+  heatmap_legend_param = gpar(title_gp = gpar(col = "black", fontsize = 11, fontface =
+    "bold")),
   ...
 )
 }
@@ -65,6 +67,9 @@ should be clustered. Default: \code{TRUE}.}
 
 \item{cluster_rows}{a code{logical} indicating if the rows
 should be clustered. Default: \code{TRUE}.}
+
+\item{heatmap_legend_param}{an object of class '\code{gpar}'. Default: 
+\code{gpar(title_gp=gpar(col="black", fontsize=11, fontface="bold"))}.}
 
 \item{\ldots}{further arguments passed to ComplexHeatmap::Heatmap() function.}
 }
