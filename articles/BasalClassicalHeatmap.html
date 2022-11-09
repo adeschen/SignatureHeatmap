@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script><p><br></p>
 <p><strong>Package</strong>: <em>BasalClassicalHeatmap</em><br><strong>Authors</strong>: Astrid Deschênes [aut, cre] (<a href="https://orcid.org/0000-0001-7846-6749" class="external-link uri">https://orcid.org/0000-0001-7846-6749</a>), Daniel King
 [dtc], David A. Tuveson [fnd] (<a href="https://orcid.org/0000-0002-8017-2712" class="external-link uri">https://orcid.org/0000-0002-8017-2712</a>)<br><strong>Version</strong>: 0.0.2<br><strong>Compiled date</strong>:
-2022-11-08<br><strong>License</strong>: Artistic-2.0<br></p>
+2022-11-09<br><strong>License</strong>: Artistic-2.0<br></p>
 <div class="section level2">
 <h2 id="licensing">Licensing<a class="anchor" aria-label="anchor" href="#licensing"></a>
 </h2>
@@ -105,9 +105,42 @@ and redistribute this software.</p>
 <div class="section level2">
 <h2 id="citing">Citing<a class="anchor" aria-label="anchor" href="#citing"></a>
 </h2>
-<p>If you use this package for a publication, we would ask you to cite
-one of the following.</p>
-<p>TODO</p>
+<p>If you use the <em><a href="https://github.com/adeschen/BasalClassicalHeatmap" class="external-link">BasalClassicalHeatmap</a></em>
+package for a publication, we would ask you to cite the following:</p>
+<blockquote>
+<p>Deschênes A, King D and Tuveson DA. BasalClassicalHeatmap: Heatmap
+using basal-like and classical gene list and RNA-seq expression data. R
+package version 0.0.2, <a href="https://adeschen.github.io/BasalClassicalHeatmap/" class="external-link uri">https://adeschen.github.io/BasalClassicalHeatmap/</a></p>
+</blockquote>
+<p>You can also replace it by the Research Resource Identifier
+<strong>(RRID)</strong>, as example:</p>
+<blockquote>
+<p>BasalClassicalHeatmap version 0.0.2, RRID: SCR_022949</p>
+</blockquote>
+<p>If you use one of the available Basal-like/Classical gene list, the
+appropriate paper should be referenced.</p>
+<p>For Moffitt et al 2015</p>
+<blockquote>
+<p>Moffitt RA, Marayati R, Flate EL et al. Virtual microdissection
+identifies distinct tumor- and stroma-specific subtypes of pancreatic
+ductal adenocarcinoma. Nat Genet. 2015 Oct;47(10):1168-78. doi:
+10.1038/ng.3398. Epub 2015 Sep 7. PMID: 26343385; PMCID: PMC4912058.</p>
+</blockquote>
+<p>For Tiriac et al. 2018</p>
+<blockquote>
+<p>Tiriac H, Belleau P, Engle DD et al. Organoid Profiling Identifies
+Common Responders to Chemotherapy in Pancreatic Cancer. Cancer Discov.
+2018 Sep;8(9):1112-1129. doi: 10.1158/2159-8290.CD-18-0349. Epub 2018
+May 31. PMID: 29853643; PMCID: PMC6125219.</p>
+</blockquote>
+<p>For Miyabayashi et al. 2020</p>
+<blockquote>
+<p>Miyabayashi K, Baker LA, Deschênes A et al. Intraductal
+Transplantation Models of Human Pancreatic Ductal Adenocarcinoma Reveal
+Progressive Transition of Molecular Subtypes. Cancer Discov. 2020
+Oct;10(10):1566-1589. doi: 10.1158/2159-8290.CD-20-0133. Epub 2020 Jul
+23. PMID: 32703770; PMCID: PMC7664990.</p>
+</blockquote>
 <p><br><br></p>
 </div>
 <div class="section level2">
@@ -158,7 +191,9 @@ and have one column per sample and one column with the name of the genes
 represented in the rows.</p>
 <p>A demo dataset called <em>demo_PDAC_TCGA</em> is available in the
 <em><a href="https://github.com/adeschen/BasalClassicalHeatmap" class="external-link">BasalClassicalHeatmap</a></em>
-package. The column for the gene names is called ‘<em>GENE</em>’.</p>
+package. This dataset is composed of few pancreatic ductal
+adenocarcinoma samples from TCGA. The column for the gene names is
+called ‘<em>GENE</em>’.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"demo_PDAC_TCGA"</span><span class="op">)</span></span>
 <span></span>
@@ -234,6 +269,9 @@ to upper letters).</p>
 </h2>
 <p>The <em>createHeatmap()</em> function is needed to generate the
 classification heatmap.</p>
+<p>This first example uses a dataset composed of few pancreatic ductal
+adenocarcinoma samples from TCGA. It shows the heatmap generated with
+the default options.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## First, fix the seed value</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">142</span><span class="op">)</span></span>
@@ -245,12 +283,15 @@ classification heatmap.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"demo_PDAC_TCGA"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## Create heatmap with default parameters</span></span>
-<span><span class="co">## The column in the rna_data data.frame is the default name "GENE"</span></span>
+<span><span class="co">## The column for the gene names in the rna_data data.frame has </span></span>
+<span><span class="co">## the default name "GENE"</span></span>
 <span><span class="fu"><a href="../reference/createHeatmap.html">createHeatmap</a></span><span class="op">(</span>gene_list<span class="op">=</span><span class="va">Moffitt_2015</span>, rna_data<span class="op">=</span><span class="va">demo_PDAC_TCGA</span><span class="op">)</span></span></code></pre></div>
-<p><img src="BasalClassicalHeatmap_files/figure-html/demo01-1.png" width="700"></p>
+<p><img src="BasalClassicalHeatmap_files/figure-html/demo01-1.png" width="700" style="display: block; margin: auto;"></p>
 <p><br><br></p>
-<p>The <em>createHeatmap()</em> function used the
-<em>ComplexHeatmap::Heatmap</em> function.</p>
+<p>The <em>createHeatmap()</em> function encapsulates the
+<em>ComplexHeatmap::Heatmap</em> function. All parameters, except
+<strong>right_annotation</strong>, from <em>ComplexHeatmap::Heatmap</em>
+function can be passed to the <em>createHeatmap()</em> function.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## First, fix the seed value</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">122</span><span class="op">)</span></span>
@@ -261,15 +302,23 @@ classification heatmap.</p>
 <span><span class="co">## Load demo PDAC TCGA expression data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"demo_PDAC_TCGA"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co">## Create heatmap with default parameters</span></span>
-<span><span class="co">## The column in the rna_data data.frame is the default name "GENE"</span></span>
+<span><span class="co">## Create heatmap with personalized parameters</span></span>
+<span><span class="co">## The column for the gene names in the rna_data data.frame </span></span>
+<span><span class="co">##     has the default name "GENE"</span></span>
+<span><span class="co">## The clustering uses Spearman method</span></span>
+<span><span class="co">## The rows and columns are split in 2 groups</span></span>
+<span><span class="co">## The row names are not shown</span></span>
 <span><span class="fu"><a href="../reference/createHeatmap.html">createHeatmap</a></span><span class="op">(</span>gene_list<span class="op">=</span><span class="va">Moffitt_2015</span>, rna_data<span class="op">=</span><span class="va">demo_PDAC_TCGA</span>,  </span>
 <span>    clustering_distance_rows <span class="op">=</span> <span class="st">"spearman"</span>, </span>
 <span>    clustering_distance_columns<span class="op">=</span><span class="st">"spearman"</span>, </span>
 <span>    row_split<span class="op">=</span><span class="fl">2</span>, column_split<span class="op">=</span><span class="fl">2</span>, column_names_gp <span class="op">=</span> <span class="fu">gpar</span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">8</span><span class="op">)</span>,</span>
 <span>    show_row_names<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="BasalClassicalHeatmap_files/figure-html/demo02-1.png" width="700"></p>
+<p><img src="BasalClassicalHeatmap_files/figure-html/demo02-1.png" width="700" style="display: block; margin: auto;"></p>
 <p><br><br></p>
+<p>The output of the <em>createHeatmap()</em> function is a
+<strong>ComplexHeatmap::Heatmap-class</strong> object that can be used
+as a parameter in the <strong>draw()</strong> function to enable further
+personalization of the graph.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Required library</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jokergoo/ComplexHeatmap" class="external-link">ComplexHeatmap</a></span><span class="op">)</span></span>
@@ -283,19 +332,21 @@ classification heatmap.</p>
 <span><span class="co">## Load demo PDAC TCGA expression data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"demo_PDAC_TCGA"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co">## Create heatmap with default parameters</span></span>
-<span><span class="co">## The column in the rna_data data.frame is the default name "GENE"</span></span>
+<span><span class="co">## Create heatmap </span></span>
+<span><span class="co">## The column for the gene names in the rna_data data.frame </span></span>
+<span><span class="co">##     has the default name "GENE"</span></span>
 <span><span class="va">gg</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/createHeatmap.html">createHeatmap</a></span><span class="op">(</span>gene_list<span class="op">=</span><span class="va">Moffitt_2015</span>, rna_data<span class="op">=</span><span class="va">demo_PDAC_TCGA</span>,  </span>
 <span>        clustering_distance_rows <span class="op">=</span> <span class="st">"spearman"</span>, </span>
 <span>        clustering_distance_columns<span class="op">=</span><span class="st">"spearman"</span>, </span>
 <span>        row_split<span class="op">=</span><span class="fl">2</span>, column_split<span class="op">=</span><span class="fl">2</span>, show_row_names<span class="op">=</span><span class="cn">FALSE</span>, </span>
 <span>        show_column_names<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
+<span><span class="co">## Assign row and column titles</span></span>
 <span><span class="va">uu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/draw-dispatch.html" class="external-link">draw</a></span><span class="op">(</span><span class="va">gg</span>, show_heatmap_legend<span class="op">=</span><span class="cn">FALSE</span>, </span>
 <span>        column_title <span class="op">=</span> <span class="st">"Samples"</span>, row_title<span class="op">=</span><span class="st">"Basal-like/Classical Genes"</span>, </span>
 <span>        column_title_gp<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grid/gpar.html" class="external-link">gpar</a></span><span class="op">(</span>fontsize<span class="op">=</span><span class="st">"12"</span>, fontface<span class="op">=</span><span class="st">"bold"</span><span class="op">)</span>, </span>
 <span>        row_title_gp<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grid/gpar.html" class="external-link">gpar</a></span><span class="op">(</span>fontsize<span class="op">=</span><span class="st">"12"</span>, fontface<span class="op">=</span><span class="st">"bold"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="BasalClassicalHeatmap_files/figure-html/demo03-1.png" width="700"></p>
+<p><img src="BasalClassicalHeatmap_files/figure-html/demo03-1.png" width="700" style="display: block; margin: auto;"></p>
 <p><br><br></p>
 </div>
 <div class="section level2">
@@ -325,6 +376,8 @@ should be call before calling the <em>createHeatmap()</em> function.</p>
 <p>This work was supported by the Lustgarten Foundation, where David A.
 Tuveson is a distinguished scholar and Director of the Lustgarten
 Foundation–designated Laboratory of Pancreatic Cancer Research.</p>
+<p>The results shown here are in part based upon data generated by the
+TCGA Research Network: <a href="https://www.cancer.gov/tcga" class="external-link uri">https://www.cancer.gov/tcga</a>.</p>
 <p><br><br></p>
 </div>
 <div class="section level2">
@@ -334,7 +387,7 @@ Foundation–designated Laboratory of Pancreatic Cancer Research.</p>
 which this document was compiled:</p>
 <pre><code><span><span class="co">## R version 4.2.1 (2022-06-23)</span></span>
 <span><span class="co">## Platform: x86_64-pc-linux-gnu (64-bit)</span></span>
-<span><span class="co">## Running under: Ubuntu 20.04.5 LTS</span></span>
+<span><span class="co">## Running under: Ubuntu 20.04.4 LTS</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Matrix products: default</span></span>
 <span><span class="co">## BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3</span></span>
@@ -353,21 +406,21 @@ which this document was compiled:</p>
 <span><span class="co">## [8] base     </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## other attached packages:</span></span>
-<span><span class="co">## [1] BasalClassicalHeatmap_0.0.2 ComplexHeatmap_2.14.0      </span></span>
-<span><span class="co">## [3] knitr_1.40                  BiocStyle_2.26.0           </span></span>
+<span><span class="co">## [1] BasalClassicalHeatmap_0.0.2 ComplexHeatmap_2.12.1      </span></span>
+<span><span class="co">## [3] knitr_1.40                  BiocStyle_2.24.0           </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## loaded via a namespace (and not attached):</span></span>
 <span><span class="co">##  [1] circlize_0.4.15     shape_1.4.6         GetoptLong_1.0.5   </span></span>
-<span><span class="co">##  [4] xfun_0.34           bslib_0.4.0         purrr_0.3.5        </span></span>
+<span><span class="co">##  [4] xfun_0.34           bslib_0.4.1         purrr_0.3.5        </span></span>
 <span><span class="co">##  [7] colorspace_2.0-3    htmltools_0.5.3     stats4_4.2.1       </span></span>
 <span><span class="co">## [10] yaml_2.3.6          rlang_1.0.6         pkgdown_2.0.6      </span></span>
-<span><span class="co">## [13] jquerylib_0.1.4     BiocGenerics_0.44.0 RColorBrewer_1.1-3 </span></span>
+<span><span class="co">## [13] jquerylib_0.1.4     BiocGenerics_0.42.0 RColorBrewer_1.1-3 </span></span>
 <span><span class="co">## [16] matrixStats_0.62.0  foreach_1.5.2       stringr_1.4.1      </span></span>
 <span><span class="co">## [19] ragg_1.2.4          GlobalOptions_0.1.2 codetools_0.2-18   </span></span>
-<span><span class="co">## [22] memoise_2.0.1       evaluate_0.17       IRanges_2.32.0     </span></span>
+<span><span class="co">## [22] memoise_2.0.1       evaluate_0.18       IRanges_2.30.1     </span></span>
 <span><span class="co">## [25] fastmap_1.1.0       doParallel_1.0.17   parallel_4.2.1     </span></span>
 <span><span class="co">## [28] highr_0.9           som_0.3-5.1         BiocManager_1.30.19</span></span>
-<span><span class="co">## [31] cachem_1.0.6        desc_1.4.2          S4Vectors_0.36.0   </span></span>
+<span><span class="co">## [31] cachem_1.0.6        desc_1.4.2          S4Vectors_0.34.0   </span></span>
 <span><span class="co">## [34] jsonlite_1.8.3      systemfonts_1.0.4   fs_1.5.2           </span></span>
 <span><span class="co">## [37] textshaping_0.3.6   rjson_0.2.21        png_0.1-7          </span></span>
 <span><span class="co">## [40] digest_0.6.30       stringi_1.7.8       rprojroot_2.0.3    </span></span>
