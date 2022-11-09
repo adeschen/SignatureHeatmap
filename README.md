@@ -32,7 +32,7 @@ to cite the following:
 
 > Deschênes A, King D and Tuveson DA. BasalClassicalHeatmap: Heatmap using basal-like and classical gene list and RNA-seq expression data. R package version 0.0.2, https://adeschen.github.io/BasalClassicalHeatmap/ 
   
-You can also replace it by the Research Resource Identifier __(RRID)__, as 
+You can also replace the latest by the Research Resource Identifier __(RRID)__, as 
 example:
 
 >   BasalClassicalHeatmap version 0.0.2, RRID: SCR_022949
