@@ -208,7 +208,7 @@ This first example uses a dataset composed of few pancreatic ductal
 adenocarcinoma samples from TCGA. It shows the heatmap generated with 
 the default options.
 
-```{r demo01, eval=TRUE, fig.height=6, fig.align="center"}
+```{r demo01, eval=TRUE, fig.height=7, fig.align="center"}
 ## First, fix the seed value
 set.seed(142)
 
@@ -233,6 +233,9 @@ _ComplexHeatmap::Heatmap_ function can be passed to the _createHeatmap()_
 function.  
 
 ```{r demo02, eval=TRUE, fig.height=6, fig.align="center"}
+## Library needed to use gpar() function
+library(grid)
+
 ## First, fix the seed value
 set.seed(122)
 
@@ -262,7 +265,7 @@ The output of the _createHeatmap()_ function is a
 __ComplexHeatmap::Heatmap-class__ object that can be used as a parameter in 
 the __draw()__ function to enable further personalization of the graph.
 
-```{r demo03, eval=TRUE, fig.height=6, fig.align="center"}
+```{r demo03, eval=TRUE, fig.height=7, fig.align="center"}
 ## Required library
 library(ComplexHeatmap)
 
@@ -301,7 +304,7 @@ To ensure reproducible results, the *set.seed()* function should be call
 before calling the *createHeatmap()* function. 
 
 
-```{r demoSeed, eval=TRUE, fig.height=6, fig.align="center"}
+```{r demoSeed, eval=TRUE, fig.height=7, fig.align="center"}
 ## First, fix the seed value to ensure reproducible results
 set.seed(144)
 
