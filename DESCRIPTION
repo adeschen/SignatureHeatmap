@@ -28,7 +28,7 @@ Suggests: testthat,
     knitr,
     rmarkdown,
     BiocStyle,
-BugReports: https://github.com/adeschen/BasalClasicalHeatmap/issues
-URL: https://adeschen.github.io/BasalClasicalHeatmap/
+BugReports: https://github.com/adeschen/BasalClassicalHeatmap/issues
+URL: https://adeschen.github.io/BasalClassicalHeatmap/
 biocViews: Software, Sequencing
 RoxygenNote: 7.1.2
