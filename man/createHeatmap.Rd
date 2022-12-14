@@ -18,6 +18,7 @@ createHeatmap(
   show_row_dend = TRUE,
   cluster_columns = TRUE,
   cluster_rows = TRUE,
+  log_data = TRUE,
   heatmap_legend_param = gpar(title_gp = gpar(col = "black", fontsize = 11, fontface =
     "bold")),
   ...
@@ -67,6 +68,10 @@ should be clustered. Default: \code{TRUE}.}
 
 \item{cluster_rows}{a code{logical} indicating if the rows
 should be clustered. Default: \code{TRUE}.}
+
+\item{log_data}{a \code{logical} indicating if the data should be log 
+transformed. If so, the data will be log2(value + 1) transformed. 
+Default: \code{TRUE}.}
 
 \item{heatmap_legend_param}{an object of class '\code{gpar}'. Default: 
 \code{gpar(title_gp=gpar(col="black", fontsize=11, fontface="bold"))}.}

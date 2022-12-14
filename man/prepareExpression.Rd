@@ -6,7 +6,7 @@
 \title{Prepare the expression data by selecting basal-like/classical genes
 and running normalization}
 \usage{
-prepareExpression(rna_data, gene_list, gene_column = "GENE")
+prepareExpression(rna_data, gene_list, gene_column = "GENE", log_data = TRUE)
 }
 \arguments{
 \item{rna_data}{a \code{data.frame} containing the expression values for 
@@ -19,6 +19,10 @@ basal-like/classical classification.}
 
 \item{gene_column}{a \code{character} string representing the name of the
 column in the \code{rna_data} parameter that contains the gene names.}
+
+\item{log_data}{a \code{logical} indicating if the data should be log 
+transformed. If so, the data will be log2(value + 1) transformed. 
+Default: \code{TRUE}.}
 }
 \value{
 a \code{list} containing 2 entries: \itemize{
@@ -49,7 +53,7 @@ data("demo_PDAC_TCGA")
 
 ## Prepare the data for the heatmap creation step
 result <- BasalClassicalHeatmap:::prepareExpression(rna_data=demo_PDAC_TCGA, 
-    gene_list=Moffitt_2015, gene_column="GENE")
+    gene_list=Moffitt_2015, gene_column="GENE", log_data=TRUE)
 
 }
 \author{

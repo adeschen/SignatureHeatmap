@@ -16,6 +16,10 @@
 #'
 #' @param gene_column a \code{character} string representing the name of the  
 #' column in the \code{rna_data} parameter that contains the gene names. 
+#' 
+#' @param log_data a \code{logical} indicating if the data should be log 
+#' transformed. If so, the data will be log2(value + 1) transformed. 
+#' Default: \code{TRUE}.
 #'
 #' @return a \code{list} containing 2 entries: \itemize{
 #' \item{DATA} { a \code{data.frame} containing the normalized expression 
@@ -39,13 +43,14 @@
 #'
 #' ## Prepare the data for the heatmap creation step
 #' result <- BasalClassicalHeatmap:::prepareExpression(rna_data=demo_PDAC_TCGA, 
-#'     gene_list=Moffitt_2015, gene_column="GENE")
+#'     gene_list=Moffitt_2015, gene_column="GENE", log_data=TRUE)
 #'
 #' @author Astrid Deschênes
 #' @importFrom som normalize
 #' @encoding UTF-8
 #' @keywords internal
-prepareExpression <- function(rna_data, gene_list, gene_column="GENE") {
+prepareExpression <- function(rna_data, gene_list, gene_column="GENE", 
+                              log_data=TRUE) {
     
     ## Create expression data frame containing only genes in list
     clean_data <- rna_data[rna_data[[gene_column]] %in% gene_list$SYMBOL,]
@@ -59,10 +64,16 @@ prepareExpression <- function(rna_data, gene_list, gene_column="GENE") {
     rowInfo <- rowInfo[rownames(clean_data),]
     
     ## Normalize data
-    temp <- colnames(clean_data)
-    normRes <- log2(clean_data + 1)
-    normResNorm <- normalize(normRes, byrow=TRUE)
-    colnames(normResNorm) <- temp
+    if (log_data) {
+        temp <- colnames(clean_data)
+        normRes <- log2(clean_data + 1)
+        normResNorm <- normalize(normRes, byrow=TRUE)
+        colnames(normResNorm) <- temp
+    } else {
+        temp <- colnames(clean_data)
+        normResNorm <- normalize(clean_data, byrow=TRUE)
+        colnames(normResNorm) <- temp
+    }
     
     listR <- list()
     listR[["DATA"]] <- normResNorm
@@ -96,16 +107,19 @@ prepareExpression <- function(rna_data, gene_list, gene_column="GENE") {
 #' heatmap legend.
 #' 
 #' @param show_column_dend a code{logical} indicating if the column 
-#' dendrogram should be shown. Default: \code{TRUE}.
+#' dendrogram should be shown. 
 #' 
 #' @param show_row_dend a code{logical} indicating if the row  
-#' dendrogram should be shown. Default: \code{TRUE}.
+#' dendrogram should be shown. 
 #'
 #' @param cluster_columns a code{logical} indicating if the columns   
-#' should be clustered. Default: \code{TRUE}.
+#' should be clustered. 
 #' 
 #' @param cluster_rows a code{logical} indicating if the rows   
-#' should be clustered. Default: \code{TRUE}.
+#' should be clustered. 
+#' 
+#' @param log_data a code{logical} indicating if the expression data    
+#' should be log transformed. 
 #'
 #' @return \code{0L} when the function is successful.
 #'
@@ -122,14 +136,15 @@ prepareExpression <- function(rna_data, gene_list, gene_column="GENE") {
 #' BasalClassicalHeatmap:::validateCreateHeatmap(gene_list=Moffitt_2015,
 #'     rna_data=demo_PDAC_TCGA, gene_column="GENE", name="Expression", 
 #'     show_column_dend=TRUE, show_row_dend=TRUE, cluster_columns=TRUE,
-#'     cluster_rows=TRUE)
+#'     cluster_rows=TRUE, log_data=FALSE)
 #' 
 #' 
 #' @author Astrid Deschênes
 #' @encoding UTF-8
 #' @keywords internal
 validateCreateHeatmap <- function(gene_list, rna_data, gene_column,
-    name, show_column_dend, show_row_dend, cluster_columns, cluster_rows) {
+    name, show_column_dend, show_row_dend, cluster_columns, cluster_rows, 
+    log_data) {
     
     if (!is.character(gene_column)) {
         stop("The \'gene_column\' parameter must be a character string.")
@@ -158,6 +173,11 @@ validateCreateHeatmap <- function(gene_list, rna_data, gene_column,
     if (!is.logical(cluster_columns)) {
         stop("The \'cluster_columns\' parameter must be a logical ", 
                 "(TRUE OR FALSE).")
+    }
+    
+    if (!is.logical(log_data)) {
+        stop("The \'log_data\' parameter must be a logical ", 
+             "(TRUE OR FALSE).")
     }
     
     return(0L)

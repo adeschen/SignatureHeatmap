@@ -53,6 +53,10 @@
 #' @param heatmap_legend_param an object of class '\code{gpar}'. Default: 
 #' \code{gpar(title_gp=gpar(col="black", fontsize=11, fontface="bold"))}.
 #' 
+#' @param log_data a \code{logical} indicating if the data should be log 
+#' transformed. If so, the data will be log2(value + 1) transformed. 
+#' Default: \code{TRUE}.
+#' 
 #' @param \ldots further arguments passed to ComplexHeatmap::Heatmap() function.
 #'
 #' @return TODO
@@ -86,7 +90,7 @@ createHeatmap <- function(gene_list, rna_data, gene_column="GENE",
     clustering_distance_columns=c("euclidean", "maximum", "manhattan", 
     "canberra", "binary", "minkowski", "pearson", "spearman", "kendall"),
     show_column_dend=TRUE, show_row_dend=TRUE, 
-    cluster_columns=TRUE, cluster_rows=TRUE, 
+    cluster_columns=TRUE, cluster_rows=TRUE, log_data=TRUE,
     heatmap_legend_param=gpar(title_gp=gpar(col="black", fontsize=11, 
     fontface="bold")), ...) {
     
@@ -94,7 +98,7 @@ createHeatmap <- function(gene_list, rna_data, gene_column="GENE",
     validateCreateHeatmap(gene_list=gene_list, rna_data=rna_data, 
         gene_column=gene_column, name=name, show_column_dend=show_column_dend, 
         show_row_dend=show_row_dend, cluster_columns=cluster_columns, 
-        cluster_rows=cluster_rows)
+        cluster_rows=cluster_rows, log_data=log_data)
     
     ## Select clustering rows method to be used
     clustering_distance_rows <- match.arg(clustering_distance_rows)
@@ -102,7 +106,8 @@ createHeatmap <- function(gene_list, rna_data, gene_column="GENE",
     ## Select clustering column method to be used
     clustering_distance_columns <- match.arg(clustering_distance_columns)
     
-    cleanData <- prepareExpression(rna_data, gene_list, gene_column="GENE")
+    cleanData <- prepareExpression(rna_data, gene_list, gene_column="GENE",
+                                   log_data=log_data)
     
     row_ha <- HeatmapAnnotation(Subtype=cleanData[["ROW_INFO"]]$Class,
                     col=list(Subtype=c("Classical"="darkviolet", 

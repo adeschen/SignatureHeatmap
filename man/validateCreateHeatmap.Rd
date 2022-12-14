@@ -13,7 +13,8 @@ validateCreateHeatmap(
   show_column_dend,
   show_row_dend,
   cluster_columns,
-  cluster_rows
+  cluster_rows,
+  log_data
 )
 }
 \arguments{
@@ -36,16 +37,19 @@ Default: \code{GENE}.}
 heatmap legend.}
 
 \item{show_column_dend}{a code{logical} indicating if the column 
-dendrogram should be shown. Default: \code{TRUE}.}
+dendrogram should be shown.}
 
 \item{show_row_dend}{a code{logical} indicating if the row
-dendrogram should be shown. Default: \code{TRUE}.}
+dendrogram should be shown.}
 
 \item{cluster_columns}{a code{logical} indicating if the columns
-should be clustered. Default: \code{TRUE}.}
+should be clustered.}
 
 \item{cluster_rows}{a code{logical} indicating if the rows
-should be clustered. Default: \code{TRUE}.}
+should be clustered.}
+
+\item{log_data}{a code{logical} indicating if the expression data
+should be log transformed.}
 }
 \value{
 \code{0L} when the function is successful.
@@ -67,7 +71,7 @@ data("demo_PDAC_TCGA")
 BasalClassicalHeatmap:::validateCreateHeatmap(gene_list=Moffitt_2015,
     rna_data=demo_PDAC_TCGA, gene_column="GENE", name="Expression", 
     show_column_dend=TRUE, show_row_dend=TRUE, cluster_columns=TRUE,
-    cluster_rows=TRUE)
+    cluster_rows=TRUE, log_data=FALSE)
 
 
 }
