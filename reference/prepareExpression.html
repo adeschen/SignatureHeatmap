@@ -62,7 +62,7 @@ the data so that each row has mean 0 and variance 1.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">prepareExpression</span><span class="op">(</span><span class="va">rna_data</span>, <span class="va">gene_list</span>, gene_column <span class="op">=</span> <span class="st">"GENE"</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">prepareExpression</span><span class="op">(</span><span class="va">rna_data</span>, <span class="va">gene_list</span>, gene_column <span class="op">=</span> <span class="st">"GENE"</span>, log_data <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -82,6 +82,12 @@ basal-like/classical classification.</p></dd>
 <dt>gene_column</dt>
 <dd><p>a <code>character</code> string representing the name of the
 column in the <code>rna_data</code> parameter that contains the gene names.</p></dd>
+
+
+<dt>log_data</dt>
+<dd><p>a <code>logical</code> indicating if the data should be log 
+transformed. If so, the data will be log2(value + 1) transformed. 
+Default: <code>TRUE</code>.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -114,7 +120,7 @@ the <code>DATA</code> <code>data.frame</code>.</p></li>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Prepare the data for the heatmap creation step</span></span></span>
 <span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">BasalClassicalHeatmap</span><span class="fu">:::</span><span class="fu">prepareExpression</span><span class="op">(</span>rna_data<span class="op">=</span><span class="va">demo_PDAC_TCGA</span>, </span></span>
-<span class="r-in"><span>    gene_list<span class="op">=</span><span class="va">Moffitt_2015</span>, gene_column<span class="op">=</span><span class="st">"GENE"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    gene_list<span class="op">=</span><span class="va">Moffitt_2015</span>, gene_column<span class="op">=</span><span class="st">"GENE"</span>, log_data<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

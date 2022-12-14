@@ -74,6 +74,7 @@ generates a heatmap using input parameters.</p>
 <span>  show_row_dend <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  cluster_columns <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  cluster_rows <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  log_data <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  heatmap_legend_param <span class="op">=</span> <span class="fu">gpar</span><span class="op">(</span>title_gp <span class="op">=</span> <span class="fu">gpar</span><span class="op">(</span>col <span class="op">=</span> <span class="st">"black"</span>, fontsize <span class="op">=</span> <span class="fl">11</span>, fontface <span class="op">=</span></span>
 <span>    <span class="st">"bold"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>  <span class="va">...</span></span>
@@ -144,6 +145,12 @@ should be clustered. Default: <code>TRUE</code>.</p></dd>
 <dt>cluster_rows</dt>
 <dd><p>a codelogical indicating if the rows
 should be clustered. Default: <code>TRUE</code>.</p></dd>
+
+
+<dt>log_data</dt>
+<dd><p>a <code>logical</code> indicating if the data should be log 
+transformed. If so, the data will be log2(value + 1) transformed. 
+Default: <code>TRUE</code>.</p></dd>
 
 
 <dt>heatmap_legend_param</dt>
