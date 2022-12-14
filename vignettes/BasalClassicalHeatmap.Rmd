@@ -160,7 +160,7 @@ There are 3 Basal-like/Classical gene lists available in the
 - Miyabayashi et al 2020
 
 
-The Moffitt et al 2015 corresponds to the original Basal-like/Classical 
+The Moffitt et al 2015 list corresponds to the original Basal-like/Classical 
 classification gene list [@Moffitt2015]. The list contains 50 genes: 
 25 Basal-like and 25 Classical genes.
 
