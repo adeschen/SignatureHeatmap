@@ -3,7 +3,8 @@
 \encoding{UTF-8}
 \name{createHeatmap}
 \alias{createHeatmap}
-\title{TODO}
+\title{Generate a heatmap based on transcriptomic data for a 
+basal-like/classical gene list}
 \usage{
 createHeatmap(
   gene_list,
@@ -79,7 +80,8 @@ Default: \code{TRUE}.}
 \item{\ldots}{further arguments passed to ComplexHeatmap::Heatmap() function.}
 }
 \value{
-TODO
+an object of class {ComplexHeatmap} that represent a heatmap based 
+on transcriptomic data for a specific basal-like/classical gene list.
 }
 \description{
 The function selects the expression values related to the 
@@ -102,7 +104,7 @@ createHeatmap(gene_list=Moffitt_2015, rna_data=demo_PDAC_TCGA)
 
 }
 \seealso{
-The default method omplexHeatmap::Heatmap().
+The default method ComplexHeatmap::Heatmap().
 }
 \author{
 Astrid Deschênes

@@ -1,4 +1,5 @@
-#' @title TODO
+#' @title Generate a heatmap based on transcriptomic data for a 
+#' basal-like/classical gene list
 #'
 #' @description The function selects the expression values related to the 
 #' gene list passed in argument. Then, the function adds one to the expression 
@@ -59,7 +60,8 @@
 #' 
 #' @param \ldots further arguments passed to ComplexHeatmap::Heatmap() function.
 #'
-#' @return TODO
+#' @return an object of class {ComplexHeatmap} that represent a heatmap based 
+#' on transcriptomic data for a specific basal-like/classical gene list.
 #'
 #' @examples
 #'
@@ -75,7 +77,7 @@
 #' 
 #' @seealso
 #' 
-#' The default method omplexHeatmap::Heatmap().
+#' The default method ComplexHeatmap::Heatmap().
 #' 
 #' 
 #' @author Astrid Deschênes
