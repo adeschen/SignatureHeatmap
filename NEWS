@@ -1,3 +1,11 @@
+CHANGES IN VERSION 0.0.4
+------------------------------
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+   o The 'log_data' parameter that enable/disable log transformation of the data has been added to the 'create_createHeatmap' function
+  
+
 CHANGES IN VERSION 0.0.3
 ------------------------------
 

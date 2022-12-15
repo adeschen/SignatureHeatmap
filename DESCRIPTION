@@ -8,7 +8,7 @@ Description: This package enables Basal-like/Classical classification of
     al. 2015; the updated list from Miyabayashi et al. 2020 and the list from 
     Tiriac et al. 2018 that has been developed for pancreatic ductal 
     adenocarcinoma (PDAC) organoids.
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: c(
     person("Astrid", "Deschênes", email="adeschen@hotmail.com",
     role=c("aut", "cre"), comment = c(ORCID = "0000-0001-7846-6749")),
