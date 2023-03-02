@@ -1,21 +1,23 @@
 <!-- badges: start -->
-[![R-CMD-check-bioc](https://github.com/adeschen/BasalClassicalHeatmap/actions/workflows/check-bioc.yaml/badge.svg)](https://github.com/adeschen/BasalClassicalHeatmap/actions/workflows/check-bioc.yaml)
-[![codecov](https://codecov.io/gh/adeschen/BasalClassicalHeatmap/branch/main/graph/badge.svg?token=XVKU8S1E2R)](https://codecov.io/gh/adeschen/BasalClassicalHeatmap)
+[![R-CMD-check-bioc](https://github.com/adeschen/SignatureHeatmap/actions/workflows/check-bioc.yaml/badge.svg)](https://github.com/adeschen/SignatureHeatmap/actions/workflows/check-bioc.yaml)
+[![codecov](https://codecov.io/gh/adeschen/SignatureHeatmap/branch/main/graph/badge.svg?token=XVKU8S1E2R)](https://codecov.io/gh/adeschen/SignatureHeatmap)
 [![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)
 <!-- badges: end -->
 
-# BasalClassicalHeatmap
+# SignatureHeatmap
 
-The __BasalClassicalHeatmap__ package enables Basal-like/Classical 
-classification of pancreatic tumor 
+The __SignatureHeatmap__ package enables signature classification of tumor 
 samples by generating heatmaps using transcriptomic data. 
 
-Three different lists of Basal-like/Classical genes are 
-available in the __BasalClassicalHeatmap__ package: the original list 
-from Moffitt et al. 2015; the 
-updated list from Miyabayashi et al. 2020 and the list from 
-Tiriac et al. 2018 that has been developed for pancreatic ductal 
-adenocarcinoma (PDAC) organoids.
+At the moment, three different lists of signature genes are 
+available in the __SignatureHeatmap__ package: 
+
+* the original list of basal/classical genes from Moffitt et al. 2015 for 
+pancreatic ductal adenocarcinoma (PDAC) tissue samples
+* the updated list of basal/classical genes for PDAC tissue samples 
+from Miyabayashi et al. 2020
+* the list of basal/classical genes from Tiriac et al. 2018 that has been 
+developed for PDAC organoids
 
 
 ## Authors ##
@@ -30,14 +32,14 @@ David A. Tuveson
 If you use this package for a publication, we would ask you 
 to cite the following:
 
-> Deschênes A, King D and Tuveson DA. BasalClassicalHeatmap: Heatmap using basal-like and classical gene list and RNA-seq expression data. R package version 0.0.3, https://adeschen.github.io/BasalClassicalHeatmap/ 
+> Deschênes A, King D and Tuveson DA. SignatureHeatmap: Heatmap using signature gene list and RNA-seq expression data. R package version 0.0.3, https://adeschen.github.io/SignatureHeatmap/ 
   
 You can also replace the latest by the Research Resource Identifier __(RRID)__, as 
 example:
 
->   BasalClassicalHeatmap version 0.0.3, RRID: SCR_022949
+>   SignatureHeatmap version 0.0.3, RRID: SCR_022949
 
-If you use one of the available Basal-like/Classical gene list, the appropriate
+If you use one of the available signature gene list, the appropriate
 paper should be referenced.
 
 For Moffitt et al. 2015
@@ -55,9 +57,9 @@ For Miyabayashi et al. 2020
 
 ## Documentation ##
 
-[BasalClassicalHeatmap Website](https://adeschen.github.io/BasalClassicalHeatmap/)
+[SignatureHeatmap Website](https://adeschen.github.io/SignatureHeatmap/)
 
-[BasalClassicalHeatmap Get Started](https://adeschen.github.io/BasalClassicalHeatmap/articles/BasalClassicalHeatmap.html)
+[SignatureHeatmap Get Started](https://adeschen.github.io/SignatureHeatmap/articles/SignatureHeatmap.html)
 
 ## Installation ##
 
@@ -67,8 +69,8 @@ package:
      ## Load required package
      library(devtools)
 
-     ## Install the latest version of BasalClassicalHeatmap
-     devtools::install_github('adeschen/BasalClassicalHeatmap')
+     ## Install the latest version of SignatureHeatmap
+     devtools::install_github('adeschen/SignatureHeatmap')
 
 
 
@@ -79,7 +81,7 @@ package:
 
 ## Bugs/Feature requests ##
 
-[Please contact us](https://github.com/adeschen/BasalClassicalHeatmap/issues) for bug fixes or with feature requests. 
+[Please contact us](https://github.com/adeschen/SignatureHeatmap/issues) for bug fixes or with feature requests. 
 
 Thanks!
 
