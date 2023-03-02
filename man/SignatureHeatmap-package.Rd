@@ -2,13 +2,13 @@
 % Please edit documentation in R/BasalClassicalHeatmap.R
 \docType{package}
 \encoding{UTF-8}
-\name{BasalClassicalHeatmap-package}
-\alias{BasalClassicalHeatmap-package}
-\alias{BasalClassicalHeatmap}
-\title{BasalClassicalHeatmap: TODO}
+\name{SignatureHeatmap-package}
+\alias{SignatureHeatmap-package}
+\alias{SignatureHeatmap}
+\title{SignatureHeatmap: TODO}
 \description{
-To learn more about \pkg{BasalClassicalHeatmap} package see:
-\url{https://github.com/adeschen/BasalClassicalHeatmap/wiki}
+To learn more about \pkg{SignatureHeatmap} package see:
+\url{https://github.com/adeschen/SignatureHeatmap/wiki}
 }
 \seealso{
 \itemize{

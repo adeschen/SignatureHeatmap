@@ -1,9 +1,10 @@
-Package: BasalClassicalHeatmap
+Package: SignatureHeatmap
 Type: Package
-Title: Heatmap using basal-like and classical gene list and RNA-seq expression 
+Title: Heatmap using signature gene list and RNA-seq expression 
     data 
-Description: This package enables Basal-like/Classical classification of 
-    pancreatic tumor samples by generating a heatmap. There is three different 
+Description: This package enables transcriptomic classification of 
+    samples by generating a heatmap for a specified signature gene list. 
+    There is three different 
     lists of genes available in the package: the original list from Moffitt et 
     al. 2015; the updated list from Miyabayashi et al. 2020 and the list from 
     Tiriac et al. 2018 that has been developed for pancreatic ductal 
@@ -28,7 +29,7 @@ Suggests: testthat,
     knitr,
     rmarkdown,
     BiocStyle,
-BugReports: https://github.com/adeschen/BasalClassicalHeatmap/issues
-URL: https://adeschen.github.io/BasalClassicalHeatmap/
+BugReports: https://github.com/adeschen/SignatureHeatmap/issues
+URL: https://adeschen.github.io/SignatureHeatmap/
 biocViews: Software, Sequencing
 RoxygenNote: 7.1.2

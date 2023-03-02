@@ -3,7 +3,8 @@
 \docType{data}
 \name{Tiriac_2018}
 \alias{Tiriac_2018}
-\title{The Basal-like and Classical gene list used in Tiriac et al 2018.}
+\title{The Basal-like and Classical gene list used in Tiriac et al 201 to classify 
+PDCA organoids.}
 \format{
 a \code{data.frame} with the following columns:
 \itemize{
@@ -17,7 +18,8 @@ symbol of the gene. }
 data(Tiriac_2018)
 }
 \description{
-The Basal-like and Classical gene list used in Tiriac et al 2018.
+The Basal-like and Classical gene list used in Tiriac et al 201 to classify 
+PDCA organoids.
 }
 \examples{
 

@@ -1,13 +1,13 @@
-#' BasalClassicalHeatmap: TODO
+#' SignatureHeatmap: TODO
 #'
-#' To learn more about \pkg{BasalClassicalHeatmap} package see:
-#' \url{https://github.com/adeschen/BasalClassicalHeatmap/wiki}
+#' To learn more about \pkg{SignatureHeatmap} package see:
+#' \url{https://github.com/adeschen/SignatureHeatmap/wiki}
 #'
 #' @docType package
 #'
-#' @name BasalClassicalHeatmap-package
+#' @name SignatureHeatmap-package
 #'
-#' @aliases BasalClassicalHeatmap-package BasalClassicalHeatmap
+#' @aliases SignatureHeatmap-package SignatureHeatmap
 #'
 #' @author
 #'
@@ -24,7 +24,8 @@
 NULL
 
 
-#' The Basal-like and Classical gene list used in Tiriac et al 2018.
+#' The Basal-like and Classical gene list used in Tiriac et al 201 to classify 
+#' PDCA organoids.
 #'
 #' @name Tiriac_2018
 #'
