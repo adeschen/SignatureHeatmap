@@ -1,12 +1,13 @@
 Package: SignatureHeatmap
 Type: Package
-Title: Heatmap using signature gene list and RNA-seq expression 
-    data 
+Title: Heatmap using signature gene list and RNA-seq expression data
 Description: This package enables transcriptomic classification of 
-    samples by generating a heatmap for a specified signature gene list. 
-    There is three different 
-    lists of genes available in the package: the original list from Moffitt et 
-    al. 2015; the updated list from Miyabayashi et al. 2020 and the list from 
+    samples by generating a heatmap for a specific signature gene list. 
+    There is currently three different 
+    lists of genes available in the package: the original basal-like/classical 
+    gene list for pancreatic ductal adenocarcinoma (PDAC) from Moffitt et 
+    al. 2015; the updated basal-like/classical list from 
+    Miyabayashi et al. 2020 and the basal-like/classical list from 
     Tiriac et al. 2018 that has been developed for pancreatic ductal 
     adenocarcinoma (PDAC) organoids.
 Version: 0.0.4
