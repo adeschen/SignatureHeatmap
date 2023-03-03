@@ -4,7 +4,7 @@
     <loc>/404.html</loc>
   </url>
   <url>
-    <loc>/articles/BasalClassicalHeatmap.html</loc>
+    <loc>/articles/SignatureHeatmap.html</loc>
   </url>
   <url>
     <loc>/articles/index.html</loc>
@@ -16,13 +16,13 @@
     <loc>/index.html</loc>
   </url>
   <url>
-    <loc>/reference/BasalClassicalHeatmap-package.html</loc>
-  </url>
-  <url>
     <loc>/reference/Miyabayashi_2020.html</loc>
   </url>
   <url>
     <loc>/reference/Moffitt_2015.html</loc>
+  </url>
+  <url>
+    <loc>/reference/SignatureHeatmap-package.html</loc>
   </url>
   <url>
     <loc>/reference/Tiriac_2018.html</loc>
