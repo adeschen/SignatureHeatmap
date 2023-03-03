@@ -42,7 +42,7 @@
 #' data("demo_PDAC_TCGA")
 #'
 #' ## Prepare the data for the heatmap creation step
-#' result <- BasalClassicalHeatmap:::prepareExpression(rna_data=demo_PDAC_TCGA, 
+#' result <- SignatureHeatmap:::prepareExpression(rna_data=demo_PDAC_TCGA, 
 #'     gene_list=Moffitt_2015, gene_column="GENE", log_data=TRUE)
 #'
 #' @author Astrid Deschênes
@@ -133,7 +133,7 @@ prepareExpression <- function(rna_data, gene_list, gene_column="GENE",
 #' data("demo_PDAC_TCGA")
 #' 
 #' ## TODO
-#' BasalClassicalHeatmap:::validateCreateHeatmap(gene_list=Moffitt_2015,
+#' SignatureHeatmap:::validateCreateHeatmap(gene_list=Moffitt_2015,
 #'     rna_data=demo_PDAC_TCGA, gene_column="GENE", name="Expression", 
 #'     show_column_dend=TRUE, show_row_dend=TRUE, cluster_columns=TRUE,
 #'     cluster_rows=TRUE, log_data=FALSE)

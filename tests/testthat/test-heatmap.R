@@ -1,6 +1,6 @@
 ### Unit tests for Heatmap.R functions
 
-library(BasalClassicalHeatmap)
+library(SignatureHeatmap)
 
 
 #############################################################################

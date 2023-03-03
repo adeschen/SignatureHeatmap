@@ -17,15 +17,16 @@
 #' @seealso
 #' \itemize{
 #' \item \code{\link{createHeatmap}} {for creating a heating using a 
-#' gene list and RNA-seq expression data.}
+#' gene signature list and RNA-seq expression data.}
 #' }
 #' @encoding UTF-8
 #' @keywords package
 NULL
 
 
-#' The Basal-like and Classical gene list used in Tiriac et al 201 to classify 
-#' PDCA organoids.
+#' The Basal-like and Classical signatures gene list used in 
+#' Tiriac et al 201 to classify pancreatic ductal 
+#' adenocarcinoma (PDAC) organoids.
 #'
 #' @name Tiriac_2018
 #'
@@ -44,7 +45,7 @@ NULL
 #' @seealso
 #' \itemize{
 #' \item \code{\link{createHeatmap}} { for creating a heating using a 
-#' gene list and RNA-seq expression data.}
+#' gene signature list and RNA-seq expression data.}
 #' }
 #'
 #' @usage data(Tiriac_2018)

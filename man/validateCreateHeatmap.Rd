@@ -68,7 +68,7 @@ data("Moffitt_2015")
 data("demo_PDAC_TCGA")
 
 ## TODO
-BasalClassicalHeatmap:::validateCreateHeatmap(gene_list=Moffitt_2015,
+SignatureHeatmap:::validateCreateHeatmap(gene_list=Moffitt_2015,
     rna_data=demo_PDAC_TCGA, gene_column="GENE", name="Expression", 
     show_column_dend=TRUE, show_row_dend=TRUE, cluster_columns=TRUE,
     cluster_rows=TRUE, log_data=FALSE)

@@ -9,10 +9,10 @@ output:
         number_sections: true
 pkgdown:
   asis: true
-bibliography: BasalClassicalHeatmap.bibtex
+bibliography: SignatureHeatmap.bibtex
 vignette: >
     %\VignetteIndexEntry{TODO}
-    %\VignettePackage{BasalClassicalHeatmap}
+    %\VignettePackage{SignatureHeatmap}
     %\VignetteEngine{knitr::rmarkdown}
     %\VignetteEncoding{UTF-8}
 ---
@@ -23,7 +23,7 @@ BiocStyle::markdown()
 suppressPackageStartupMessages({
   library(knitr)
   library(ComplexHeatmap)
-  library(BasalClassicalHeatmap)
+  library(SignatureHeatmap)
 })
 
 set.seed(121)
@@ -32,18 +32,18 @@ set.seed(121)
 
 <br />
 
-**Package**: `r Rpackage("BasalClassicalHeatmap")`<br />
-**Authors**: `r packageDescription("BasalClassicalHeatmap")[["Author"]]`<br />
-**Version**: `r packageDescription("BasalClassicalHeatmap")$Version`<br />
+**Package**: `r Rpackage("SignatureHeatmap")`<br />
+**Authors**: `r packageDescription("SignatureHeatmap")[["Author"]]`<br />
+**Version**: `r packageDescription("SignatureHeatmap")$Version`<br />
 **Compiled date**: `r Sys.Date()`<br />
-**License**: `r packageDescription("BasalClassicalHeatmap")[["License"]]`<br />
+**License**: `r packageDescription("SignatureHeatmap")[["License"]]`<br />
 
 
 # Licensing 
 
 
-The `r Githubpkg("adeschen/BasalClassicalHeatmap")` package and the underlying 
-`r Githubpkg("adeschen/BasalClassicalHeatmap")` code are distributed under the 
+The `r Githubpkg("adeschen/SignatureHeatmap")` package and the underlying 
+`r Githubpkg("adeschen/SignatureHeatmap")` code are distributed under the 
 Artistic license 2.0. You are free to use and redistribute this software. 
 
 <br>
@@ -53,10 +53,10 @@ Artistic license 2.0. You are free to use and redistribute this software.
 # Citing
 
 
-If you use the `r Githubpkg("adeschen/BasalClassicalHeatmap")` package for 
+If you use the `r Githubpkg("adeschen/SignatureHeatmap")` package for 
 a publication, we would ask you to cite the following:
 
-> Deschênes A, King D and Tuveson DA. BasalClassicalHeatmap: Heatmap using basal-like and classical gene list and RNA-seq expression data. R package version 0.0.2, https://adeschen.github.io/BasalClassicalHeatmap/ 
+> Deschênes A, King D and Tuveson DA. SignatureHeatmap: Heatmap using basal-like and classical gene list and RNA-seq expression data. R package version 0.0.2, https://adeschen.github.io/SignatureHeatmap/ 
   
 You can also replace it by the Research Resource Identifier __(RRID)__, as 
 example:
@@ -110,8 +110,8 @@ You need to start R (version "4.2" or higher) and enter:
 if (!requireNamespace("devtools", quietly = TRUE))
   install.packages("devtools")
 
-## Install the latest version of BasalClassicalHeatmap
- devtools::install_github('adeschen/BasalClassicalHeatmap')
+## Install the latest version of SignatureHeatmap
+ devtools::install_github('adeschen/SignatureHeatmap')
 ```
 
 
@@ -134,7 +134,7 @@ have one column per sample and one column
 with the name of the genes represented in the rows. 
 
 A demo dataset called _demo_PDAC_TCGA_ is available in the 
-`r Githubpkg("adeschen/BasalClassicalHeatmap")` package. This dataset is 
+`r Githubpkg("adeschen/SignatureHeatmap")` package. This dataset is 
 composed of few pancreatic ductal adenocarcinoma samples from TCGA. The 
 column for the gene names is called '_GENE_'.
 
@@ -153,7 +153,7 @@ head(demo_PDAC_TCGA[, (ncol(demo_PDAC_TCGA)-4):ncol(demo_PDAC_TCGA)], nrow=3)
 
 
 There are 3 Basal-like/Classical gene lists available in the 
-`r Githubpkg("adeschen/BasalClassicalHeatmap")` package:
+`r Githubpkg("adeschen/SignatureHeatmap")` package:
 
 - Moffitt et al 2015
 - Tiriac et al 2018

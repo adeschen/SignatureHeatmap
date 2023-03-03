@@ -1,5 +1,5 @@
 library(testthat)
-library(BasalClassicalHeatmap)
+library(SignatureHeatmap)
 
 ## Run all unit tests
-test_check("BasalClassicalHeatmap")
+test_check("SignatureHeatmap")

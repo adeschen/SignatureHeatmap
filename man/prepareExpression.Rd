@@ -52,7 +52,7 @@ data("Moffitt_2015")
 data("demo_PDAC_TCGA")
 
 ## Prepare the data for the heatmap creation step
-result <- BasalClassicalHeatmap:::prepareExpression(rna_data=demo_PDAC_TCGA, 
+result <- SignatureHeatmap:::prepareExpression(rna_data=demo_PDAC_TCGA, 
     gene_list=Moffitt_2015, gene_column="GENE", log_data=TRUE)
 
 }
