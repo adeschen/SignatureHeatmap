@@ -37,7 +37,7 @@ to cite the following:
 You can also replace the latest by the Research Resource Identifier __(RRID)__, as 
 example:
 
->   SignatureHeatmap version 0.0.3, RRID: SCR_022949
+>   SignatureHeatmap version 0.0.4, RRID: SCR_022949
 
 If you use one of the available signature gene list, the appropriate
 paper should be referenced.
