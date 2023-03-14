@@ -1,5 +1,5 @@
 ---
-title: "Basal-like/Classical transcriptomic heatmap"
+title: "Signature heatmap based on transcriptomic data"
 author: Astrid Deschênes
 output:
     rmarkdown::html_document:
