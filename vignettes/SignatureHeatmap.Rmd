@@ -61,7 +61,7 @@ a publication, we would ask you to cite the following:
 You can also replace it by the Research Resource Identifier __(RRID)__, as 
 example:
 
->   SignatureHeatmap version 0.0.3, RRID: SCR_022949
+>   SignatureHeatmap version 0.0.4, RRID: SCR_022949
 
 If you use one of the available Basal-like/Classical gene list, the appropriate
 paper should be referenced.
